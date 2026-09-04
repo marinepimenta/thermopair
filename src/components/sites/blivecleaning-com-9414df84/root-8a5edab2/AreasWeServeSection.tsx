@@ -85,8 +85,9 @@ export default function AreasWeServeSection() {
             Areas We Serve
           </h2>
           <p className="max-w-[56ch] font-body text-[17px] leading-[1.65] text-thermo-graphite md:text-[19px]">
-            We install and service heating and cooling systems across
-            Massachusetts.
+            From Greater Boston to Central Massachusetts and the North
+            Shore, we&rsquo;re there when your heating or cooling needs
+            attention.
           </p>
         </div>
 

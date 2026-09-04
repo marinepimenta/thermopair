@@ -13,7 +13,7 @@ export default function ServicesIntroSection() {
             className="reveal max-w-[20ch] text-balance font-heading text-[clamp(2rem,4.4vw,3.5rem)] font-medium leading-[1.06] text-white"
             style={{ "--i": 1 } as React.CSSProperties}
           >
-            We keep your space comfortable in every season
+            Pick the service, we&rsquo;ll handle the rest
           </h3>
         </div>
 
@@ -22,12 +22,10 @@ export default function ServicesIntroSection() {
             className="reveal max-w-[56ch] font-body text-[17px] leading-[1.65] text-thermo-mist/70 md:text-[19px]"
             style={{ "--i": 2 } as React.CSSProperties}
           >
-            Our goal is simple: a home or business that stays comfortable
-            without you having to think about it. We install, repair, and
-            maintain heating and cooling systems for households and
-            businesses across Massachusetts, and we explain every option in
-            plain language so you can decide with confidence and no
-            surprises on the invoice.
+            Whether it&rsquo;s a furnace on the fritz or a system due for an
+            upgrade, choose what you need below. We&rsquo;ll walk you through
+            the options in plain language, with no surprises when the
+            invoice arrives.
           </p>
         </div>
       </div>

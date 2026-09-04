@@ -29,8 +29,9 @@ export default function FeaturesHandSection() {
               Trained &amp; experienced technicians
             </h3>
             <p className="max-w-[56ch] font-body text-[17px] leading-[1.65] text-thermo-mist/70 md:text-[19px]">
-              Our technicians are trained, licensed, and experienced, so
-              your system is installed and serviced to the highest standard.
+              Our technicians are trained, licensed, and experienced, so the
+              job gets done right the first time — no callbacks, no
+              guesswork.
             </p>
           </div>
 
