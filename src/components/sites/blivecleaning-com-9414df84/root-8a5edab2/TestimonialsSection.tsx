@@ -68,10 +68,11 @@ const REVIEWS = [
 function Star() {
   return (
     <svg
-      width="18"
-      height="18"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
-      fill="#FF6512"
+      className="text-thermo-orange"
+      fill="currentColor"
       aria-hidden="true"
     >
       <path d="M12 2l2.9 6.26 6.9.6-5.2 4.55 1.57 6.79L12 16.9l-6.17 3.3 1.57-6.79-5.2-4.55 6.9-.6L12 2z" />
@@ -84,52 +85,71 @@ export default function TestimonialsSection() {
   const review = REVIEWS[active];
 
   return (
-    <section className="min-h-[868px] w-full bg-white py-14 lg:py-[90px]">
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col px-5 lg:flex-row lg:items-center lg:gap-[60px]">
-        <div className="mb-8 w-full lg:mb-0 lg:w-[40%]">
-          <Image
-            src={`${ASSET_BASE}/hvac/technician-hivis.jpg`}
-            alt="Thermopair technician servicing a condenser unit"
-            width={462}
-            height={512}
-            className="h-[280px] w-full rounded-[8px] object-cover md:h-[380px] lg:h-auto"
-          />
+    <section className="w-full px-5 py-24 md:px-8 md:py-32 lg:py-40">
+      <div className="mx-auto flex w-full max-w-[1320px] flex-col lg:flex-row lg:items-center lg:gap-[60px]">
+        <div
+          className="reveal mb-8 w-full lg:mb-0 lg:w-[40%]"
+          style={{ "--i": 0 } as React.CSSProperties}
+        >
+          <div className="overflow-hidden rounded-[28px] ring-1 ring-black/5">
+            <Image
+              src={`${ASSET_BASE}/hvac/technician-hivis.jpg`}
+              alt="Thermopair technician servicing a condenser unit"
+              width={462}
+              height={578}
+              className="aspect-[4/5] h-auto w-full object-cover"
+            />
+          </div>
         </div>
 
         <div className="w-full lg:flex-1">
-          <h3 className="mb-3 font-heading text-[24px] font-bold leading-[24px] text-thermo-orange">
+          <h3
+            className="reveal mb-3 font-body text-[12px] font-medium uppercase tracking-[0.22em] text-thermo-orange"
+            style={{ "--i": 1 } as React.CSSProperties}
+          >
             TESTIMONIALS
           </h3>
-          <h2 className="mb-8 font-heading text-[32px] font-bold leading-[34px] text-black md:text-[40px] md:leading-[42px] lg:text-[48px] lg:leading-[48px]">
+          <h2
+            className="reveal mb-8 max-w-[20ch] text-balance font-heading text-[clamp(2rem,4.4vw,3.5rem)] font-medium leading-[1.06] text-thermo-ink"
+            style={{ "--i": 2 } as React.CSSProperties}
+          >
             What Our Clients Say About Us
           </h2>
 
-          <div key={active} className="min-h-[240px] transition-opacity duration-300 lg:min-h-[200px]">
-            <div className="mb-5 flex gap-1">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} />
+          <div
+            className="reveal"
+            style={{ "--i": 3 } as React.CSSProperties}
+          >
+            <div
+              key={active}
+              className="min-h-[260px] transition-opacity duration-300 lg:min-h-[220px]"
+            >
+              <div className="mb-5 flex gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} />
+                ))}
+              </div>
+              <p className="max-w-[56ch] font-heading text-[clamp(1.45rem,2.6vw,2.15rem)] font-medium leading-[1.35] text-thermo-ink">
+                {review.quote}
+              </p>
+              <p className="mt-5 font-body text-[14px] uppercase tracking-[0.14em] text-thermo-slate">
+                {review.author}
+              </p>
+            </div>
+
+            <div className="mt-7 flex gap-2">
+              {REVIEWS.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Show review ${i + 1}`}
+                  onClick={() => setActive(i)}
+                  className={`h-1.5 w-6 rounded-full transition-colors ${
+                    i === active ? "bg-thermo-orange" : "bg-black/15"
+                  }`}
+                />
               ))}
             </div>
-            <p className="font-body text-[18px] font-normal italic leading-[28px] text-[#2C2E33] lg:text-[20px] lg:leading-[32px]">
-              {review.quote}
-            </p>
-            <p className="mt-4 font-body text-[16px] font-semibold text-black">
-              {review.author}
-            </p>
-          </div>
-
-          <div className="mt-7 flex gap-2">
-            {REVIEWS.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                aria-label={`Show review ${i + 1}`}
-                onClick={() => setActive(i)}
-                className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                  i === active ? "bg-thermo-orange" : "bg-thermo-slate/40"
-                }`}
-              />
-            ))}
           </div>
         </div>
       </div>

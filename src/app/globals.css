@@ -155,10 +155,11 @@
   --color-thermo-purple-pale: #b7b2ff;
 }
 
+/* ── Bandas dark / light ────────────────────────────────────────────── */
 .thermo-page {
   font-family: var(--font-body), Inter, system-ui, sans-serif;
   color: #2c2e33;
-  background: #ffffff;
+  background: #0b0b10;
 }
 .thermo-page h1,
 .thermo-page h2,
@@ -167,6 +168,141 @@
 .thermo-page h5,
 .thermo-page h6 {
   font-family: var(--font-heading), Georgia, serif;
+  letter-spacing: -0.015em;
+}
+
+.band-dark {
+  background-color: #0b0b10;
+  color: #ebecee;
+}
+.band-light {
+  background-color: #f8f9fa;
+  color: #2c2e33;
+}
+/* Cor padrão dos títulos por banda.
+   Vai em @layer components e usa :where() para NÃO vencer as utilities do
+   Tailwind: um text-white explícito precisa continuar valendo (ex.: heading
+   claro dentro de um card escuro numa banda clara). */
+@layer components {
+  .band-dark :where(h1, h2, h3, h4, h5, h6) { color: #ffffff; }
+  .band-light :where(h1, h2, h3, h4, h5, h6) { color: #131313; }
+}
+
+/* ── Morph entre bandas ──────────────────────────────────────────────────
+   Uma forma de raio elíptico enorme, pintada com a cor da seção seguinte,
+   sobe por cima da anterior. No scroll ela achata e cresce, então o claro
+   emerge e engole o escuro em vez de cortar. */
+.morph {
+  position: relative;
+  width: 100%;
+  height: clamp(72px, 10vw, 168px);
+  /* Margem NEGATIVA NO TOPO: a forma sobe e cobre o fim da seção anterior,
+     sem deslocar o que vem depois. */
+  margin-top: calc(-1 * clamp(72px, 10vw, 168px));
+  z-index: 2;
+  pointer-events: none;
+  border-start-start-radius: 50% 100%;
+  border-start-end-radius: 50% 100%;
+  transform-origin: 50% 100%;
+  will-change: transform;
+}
+.morph-light { background-color: #f8f9fa; }
+.morph-dark { background-color: #0b0b10; }
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .morph {
+      animation: morph-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 55%;
+    }
+  }
+}
+@keyframes morph-rise {
+  from { transform: scaleY(0.35); border-start-start-radius: 50% 100%; border-start-end-radius: 50% 100%; }
+  to   { transform: scaleY(1);    border-start-start-radius: 50% 22%;  border-start-end-radius: 50% 22%; }
+}
+
+/* O morph já entrega respiro visual: a primeira seção de cada banda não
+   precisa do padding-top cheio. */
+.band-light > section:first-child,
+.band-dark > section:first-child {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+/* Scrim atrás da navbar enquanto ela está transparente sobre a hero, para
+   que o conteúdo que passa por baixo não colida com o logo e os links. */
+.nav-scrim::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgba(11, 11, 16, 0.92) 0%, rgba(11, 11, 16, 0.65) 55%, rgba(11, 11, 16, 0) 100%);
+  pointer-events: none;
+}
+
+/* ── Reveal no scroll ───────────────────────────────────────────────────
+   Estado inicial só é aplicado quando o JS assume (data-reveal-ready),
+   para que sem JS nada fique invisível e não haja layout shift. */
+[data-reveal-ready] .reveal {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+[data-reveal-ready] .reveal[data-revealed="true"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal-ready] .reveal,
+  [data-reveal-ready] .reveal[data-revealed="true"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .morph { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ── Hero ───────────────────────────────────────────────────────────────*/
+/* Arco editorial: topo em arco pleno, base levemente arredondada. */
+.hero-arch {
+  border-start-start-radius: 999px;
+  border-start-end-radius: 999px;
+  border-end-start-radius: 20px;
+  border-end-end-radius: 20px;
+  overflow: hidden;
+}
+/* Halo laranja→roxo atrás do arco. Um único gradiente, sem blur filter. */
+.hero-halo {
+  background-image:
+    radial-gradient(52% 42% at 50% 42%, rgba(255, 101, 18, 0.5) 0%, rgba(255, 101, 18, 0) 68%),
+    radial-gradient(64% 56% at 56% 66%, rgba(105, 76, 252, 0.42) 0%, rgba(105, 76, 252, 0) 72%);
+}
+.hero-chip {
+  border: 1px solid rgba(235, 236, 238, 0.16);
+  background-color: rgba(235, 236, 238, 0.05);
+}
+
+/* Sublinhado que cresce no hover, usado em links de navegação e listas. */
+.link-underline {
+  background-image: linear-gradient(#ff6512, #ff6512);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1.5px;
+  transition: background-size 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover,
+.link-underline:focus-visible { background-size: 100% 1.5px; }
+
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid #ff6512;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* ── Gradientes da marca ────────────────────────────────────────────────

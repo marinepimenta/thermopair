@@ -63,7 +63,7 @@ function FaqItem({
   const triggerId = `faq-trigger-${index}`;
 
   return (
-    <div className="border-b border-[#EBECEE]">
+    <div className="border-b border-black/8">
       <button
         id={triggerId}
         type="button"
@@ -71,34 +71,41 @@ function FaqItem({
         aria-controls={panelId}
         onClick={onToggle}
         className={cn(
-          "flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left transition-colors md:py-[25px]",
+          "flex w-full cursor-pointer items-center justify-between gap-4 py-7 text-left transition-colors",
         )}
       >
         <span
           className={cn(
-            "font-body text-[15px] font-bold leading-[16px] text-[#2C2E33] transition-colors hover:text-[#FF6512] md:text-base",
-            isOpen && "text-[#FF6512]"
+            "font-heading text-[clamp(1.05rem,1.5vw,1.25rem)] font-medium leading-[1.35] text-thermo-ink transition-colors hover:text-thermo-orange",
+            isOpen && "text-thermo-orange"
           )}
         >
           {q}
         </span>
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
+        <span
           className={cn(
-            "shrink-0 transition-transform duration-300",
-            isOpen && "rotate-45"
+            "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-black/10 transition-colors",
+            isOpen && "border-thermo-orange bg-thermo-orange"
           )}
         >
-          <path
-            d="M8 1V15M1 8H15"
-            stroke="#FF6512"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        </svg>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            className={cn(
+              "shrink-0 transition-transform duration-300",
+              isOpen && "rotate-45"
+            )}
+          >
+            <path
+              d="M8 1V15M1 8H15"
+              stroke={isOpen ? "#ffffff" : "#FF6512"}
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+        </span>
       </button>
       <div
         className="grid transition-all duration-300"
@@ -110,7 +117,7 @@ function FaqItem({
           aria-labelledby={triggerId}
           className="overflow-hidden"
         >
-          <p className="pb-5 font-body text-base font-normal leading-[25px] text-[#8F97A2] md:pb-[25px] md:text-[18px] md:leading-[27px]">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.7] text-thermo-graphite max-w-[68ch] pb-8">
             {a}
           </p>
         </div>
@@ -123,14 +130,20 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-white py-12 lg:py-[60px] lg:pb-[100px]">
-      <div className="mx-auto flex w-full max-w-[1340px] flex-col px-5 lg:flex-row lg:items-start lg:gap-[60px]">
-        <div className="mb-8 lg:mb-0 lg:w-[376px] lg:shrink-0">
-          <h2 className="max-w-[376px] font-heading text-[34px] font-semibold leading-[36px] text-black md:text-[44px] md:leading-[46px] lg:text-[56px] lg:leading-[56px]">
+    <section className="py-24 md:py-32 lg:py-40">
+      <div className="mx-auto flex w-full max-w-[1320px] flex-col px-5 md:px-8 lg:flex-row lg:items-start lg:gap-[60px]">
+        <div
+          className="reveal mb-8 lg:mb-0 lg:w-[376px] lg:shrink-0 lg:sticky lg:top-32 lg:self-start"
+          style={{ "--i": 0 } as React.CSSProperties}
+        >
+          <h2 className="font-heading font-medium text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.06] text-balance max-w-[16ch] text-thermo-ink">
             Frequently Asked Questions
           </h2>
         </div>
-        <div className="lg:flex-1">
+        <div
+          className="reveal lg:flex-1"
+          style={{ "--i": 1 } as React.CSSProperties}
+        >
           {FAQS.map((faq, i) => (
             <FaqItem
               key={faq.q}

@@ -14,17 +14,22 @@ const BADGES = [
 
 export default function BadgesStrip() {
   return (
-    <section className="w-full bg-white py-10 md:h-[223px] md:py-10 flex items-center">
-      <div className="mx-auto w-full max-w-[1320px] px-5">
-        <div className="flex flex-row flex-wrap items-center justify-center gap-6 md:gap-10">
-          {BADGES.map((badge) => (
-            <div
-              key={badge}
-              className="flex h-[52px] w-[92px] items-center justify-center rounded-md border border-dashed border-thermo-slate/50 bg-thermo-paper px-3 text-center font-body text-[10px] leading-tight text-thermo-slate md:h-[74px] md:w-[120px] md:text-[11px]"
-            >
-              {badge}
-            </div>
-          ))}
+    <section className="w-full py-16 md:py-20">
+      <div className="mx-auto w-full max-w-[1320px] px-5 md:px-8">
+        <div
+          className="reveal border-t border-black/8 pt-12"
+          style={{ "--i": 0 } as React.CSSProperties}
+        >
+          <div className="flex flex-row flex-wrap items-center justify-center gap-3 md:gap-4">
+            {BADGES.map((badge) => (
+              <div
+                key={badge}
+                className="rounded-full border border-dashed border-thermo-slate/40 bg-transparent px-4 py-2 text-center font-body text-[11px] uppercase leading-tight tracking-[0.12em] text-thermo-slate md:px-5 md:py-2.5 md:text-[12px]"
+              >
+                {badge}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

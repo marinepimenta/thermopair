@@ -61,133 +61,128 @@ function LinkedinIcon() {
 
 export default function SiteFooter() {
   return (
-    <footer>
-      {/* Band A - logo badge */}
-      <div className="grad-glow-cool flex h-[138px] items-center justify-center">
+    <footer className="bg-[#0b0b10] pb-10 pt-24 md:pt-32">
+      <div className="mx-auto mb-16 w-full max-w-[1320px] px-5 md:mb-20 md:px-8">
         <Image
           src={`${ASSET_BASE}/logo-thermopair-horizontal-gradient.svg`}
           alt="Thermopair — Climate Care"
           width={340}
           height={57}
-          className="h-[57px] w-auto"
+          className="h-[44px] w-auto"
         />
       </div>
 
-      {/* Band B - link columns */}
-      <div className="bg-thermo-ink pb-20 pt-10">
-        <div className="mx-auto grid w-full max-w-[1320px] grid-cols-1 gap-10 px-5 md:grid-cols-3">
-          <div>
-            <h2 className="mb-5 font-heading text-[30px] font-semibold leading-[30px] text-white">
-              Our Services
-            </h2>
-            <div className="mb-5 h-px w-full bg-white/20" />
-            <ul>
-              {SERVICES.map((s) => (
-                <li key={s}>
-                  <Link
-                    href="#"
-                    className="font-body text-[19px] font-normal leading-[40px] text-thermo-mist hover:text-thermo-orange-pale"
-                  >
-                    {s}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="mb-5 font-heading text-[30px] font-semibold leading-[30px] text-white">
-              Quick Links
-            </h2>
-            <div className="mb-5 h-px w-full bg-white/20" />
-            <ul>
-              {QUICK_LINKS.map((s) => (
-                <li key={s}>
-                  <Link
-                    href="#"
-                    className="font-body text-[19px] font-normal leading-[40px] text-thermo-mist hover:text-thermo-orange-pale"
-                  >
-                    {s}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="mb-5 font-heading text-[30px] font-semibold leading-[30px] text-white">
-              Contact Us
-            </h2>
-            <div className="mb-5 h-px w-full bg-white/20" />
-            <div className="font-body text-[19px] font-normal leading-[40px] text-thermo-mist">
-              <p>
-                <span className="font-semibold">Location:</span> 000 Example
-                St, Boston, MA 00000
-              </p>
-              <p>
-                <span className="font-semibold">Phone:</span>{" "}
-                <a
-                  href="tel:+10000000000"
-                  className="hover:text-thermo-orange-pale"
+      <div className="mx-auto grid w-full max-w-[1320px] grid-cols-1 gap-10 px-5 md:grid-cols-3 md:px-8">
+        <div className="reveal" style={{ "--i": 0 } as React.CSSProperties}>
+          <h2 className="font-heading text-[clamp(1.1rem,1.5vw,1.35rem)] font-medium text-white">
+            Our Services
+          </h2>
+          <div className="mt-6 h-px w-full bg-white/10" />
+          <ul className="mt-2">
+            {SERVICES.map((s) => (
+              <li key={s}>
+                <Link
+                  href="#"
+                  className="link-underline font-body text-[15px] leading-[2.1] text-thermo-mist/65 transition-colors hover:text-thermo-orange"
                 >
-                  (000) 000-0000
-                </a>
-              </p>
-              <p>
-                <span className="font-semibold">Email:</span>{" "}
-                <a
-                  href="mailto:hello@thermopair.com"
-                  className="hover:text-thermo-orange-pale"
+                  {s}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="reveal" style={{ "--i": 1 } as React.CSSProperties}>
+          <h2 className="font-heading text-[clamp(1.1rem,1.5vw,1.35rem)] font-medium text-white">
+            Quick Links
+          </h2>
+          <div className="mt-6 h-px w-full bg-white/10" />
+          <ul className="mt-2">
+            {QUICK_LINKS.map((s) => (
+              <li key={s}>
+                <Link
+                  href="#"
+                  className="link-underline font-body text-[15px] leading-[2.1] text-thermo-mist/65 transition-colors hover:text-thermo-orange"
                 >
-                  hello@thermopair.com
-                </a>
-              </p>
-              <p>
-                <span className="font-semibold">Office Hours:</span> Mon –
-                Fri: 8 AM – 5 PM
-              </p>
-              <p>
-                <span className="font-semibold">Emergency Service:</span>{" "}
-                24/7
-              </p>
-            </div>
-            <div className="mt-4 flex flex-row gap-3">
+                  {s}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="reveal" style={{ "--i": 2 } as React.CSSProperties}>
+          <h2 className="font-heading text-[clamp(1.1rem,1.5vw,1.35rem)] font-medium text-white">
+            Contact Us
+          </h2>
+          <div className="mt-6 h-px w-full bg-white/10" />
+          <div className="mt-2 font-body text-[15px] leading-[2.1] text-thermo-mist/65">
+            <p>
+              <span className="font-semibold text-thermo-mist/80">Location:</span> 000 Example
+              St, Boston, MA 00000
+            </p>
+            <p>
+              <span className="font-semibold text-thermo-mist/80">Phone:</span>{" "}
               <a
-                href="#"
-                aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-thermo-orange"
+                href="tel:+10000000000"
+                className="link-underline transition-colors hover:text-thermo-orange"
               >
-                <FacebookIcon />
+                (000) 000-0000
               </a>
+            </p>
+            <p>
+              <span className="font-semibold text-thermo-mist/80">Email:</span>{" "}
               <a
-                href="#"
-                aria-label="Youtube"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-thermo-orange"
+                href="mailto:hello@thermopair.com"
+                className="link-underline transition-colors hover:text-thermo-orange"
               >
-                <YoutubeIcon />
+                hello@thermopair.com
               </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-thermo-orange"
-              >
-                <InstagramIcon />
-              </a>
-              <a
-                href="#"
-                aria-label="Linkedin"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-thermo-orange"
-              >
-                <LinkedinIcon />
-              </a>
-            </div>
+            </p>
+            <p>
+              <span className="font-semibold text-thermo-mist/80">Office Hours:</span> Mon –
+              Fri: 8 AM – 5 PM
+            </p>
+            <p>
+              <span className="font-semibold text-thermo-mist/80">Emergency Service:</span>{" "}
+              24/7
+            </p>
+          </div>
+          <div className="mt-5 flex flex-row gap-3">
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-thermo-mist/80 transition-colors hover:border-thermo-orange hover:text-thermo-orange"
+            >
+              <FacebookIcon />
+            </a>
+            <a
+              href="#"
+              aria-label="Youtube"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-thermo-mist/80 transition-colors hover:border-thermo-orange hover:text-thermo-orange"
+            >
+              <YoutubeIcon />
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-thermo-mist/80 transition-colors hover:border-thermo-orange hover:text-thermo-orange"
+            >
+              <InstagramIcon />
+            </a>
+            <a
+              href="#"
+              aria-label="Linkedin"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-thermo-mist/80 transition-colors hover:border-thermo-orange hover:text-thermo-orange"
+            >
+              <LinkedinIcon />
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Band C - copyright bar */}
-      <div className="flex h-[78px] items-center justify-center bg-thermo-ink">
-        <p className="font-body text-[15px] text-white">
+      <div className="mx-auto mt-20 w-full max-w-[1320px] border-t border-white/10 px-5 pt-8 md:px-8">
+        <p className="font-body text-[13px] text-thermo-mist/45">
           Copyright 2026 by Thermopair. All Rights Reserved.
         </p>
       </div>

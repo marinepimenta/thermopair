@@ -5,33 +5,44 @@ const ASSET_BASE =
 
 export default function FeaturesHandSection() {
   return (
-    <section className="min-h-[auto] w-full bg-white px-5 py-10 md:px-8 md:py-12 lg:min-h-[495px] lg:py-[60px]">
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col lg:flex-row lg:items-center lg:gap-[60px]">
-        <Image
-          src={`${ASSET_BASE}/hvac/technician-cap.jpg`}
-          alt="Thermopair technician on site"
-          width={300}
-          height={382}
-          className="h-[240px] w-full rounded-lg object-cover md:h-[320px] lg:h-[382px] lg:w-auto"
-        />
+    <section className="w-full py-24 md:py-32 lg:py-40">
+      <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-12 px-5 md:px-8 lg:flex-row lg:items-center lg:gap-16">
+        <div
+          className="reveal w-full lg:w-[40%]"
+          style={{ "--i": 0 } as React.CSSProperties}
+        >
+          <Image
+            src={`${ASSET_BASE}/hvac/technician-cap.jpg`}
+            alt="Thermopair technician on site"
+            width={300}
+            height={382}
+            className="aspect-[3/4] w-full rounded-[28px] object-cover ring-1 ring-white/10 lg:w-auto"
+          />
+        </div>
 
-        <div className="mt-8 flex flex-1 flex-col gap-10 lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-10">
-          <div>
-            <h3 className="mb-3 font-heading text-[24px] font-bold leading-[26px] text-black md:text-[28px] md:leading-[30px] lg:text-[32px] lg:leading-[32px]">
+        <div className="flex flex-1 flex-col gap-10 lg:grid lg:grid-cols-2 lg:gap-10">
+          <div
+            className="reveal border-t border-white/10 pt-8"
+            style={{ "--i": 1 } as React.CSSProperties}
+          >
+            <h3 className="mb-3 font-heading text-[clamp(1.35rem,2.2vw,1.9rem)] font-medium leading-[1.15] text-white">
               Trained &amp; experienced technicians
             </h3>
-            <p className="max-w-[620px] font-body text-[17px] font-normal leading-[27px] text-black md:text-[19px] md:leading-[29px] lg:text-[22px] lg:leading-[33px]">
+            <p className="max-w-[56ch] font-body text-[17px] leading-[1.65] text-thermo-mist/70 md:text-[19px]">
               Our technicians are trained, licensed, and experienced, so
               your system is installed and serviced to the highest standard.
             </p>
           </div>
 
-          <div>
-            <h3 className="mb-3 font-heading text-[24px] font-bold leading-[26px] text-black md:text-[28px] md:leading-[30px] lg:text-[32px] lg:leading-[32px]">
+          <div
+            className="reveal border-t border-white/10 pt-8"
+            style={{ "--i": 2 } as React.CSSProperties}
+          >
+            <h3 className="mb-3 font-heading text-[clamp(1.35rem,2.2vw,1.9rem)] font-medium leading-[1.15] text-white">
               100% <br />
               Guaranteed
             </h3>
-            <p className="max-w-[620px] font-body text-[17px] font-normal leading-[27px] text-black md:text-[19px] md:leading-[29px] lg:text-[22px] lg:leading-[33px]">
+            <p className="max-w-[56ch] font-body text-[17px] leading-[1.65] text-thermo-mist/70 md:text-[19px]">
               We stand behind our work. If something isn&apos;t right after
               we leave, we come back and fix it — that is our guarantee to
               you.

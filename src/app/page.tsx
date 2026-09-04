@@ -6,6 +6,8 @@ import FaqSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5ed
 import FeaturesHandSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/FeaturesHandSection";
 import HeroSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/HeroSection";
 import QuoteFormSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/QuoteFormSection";
+import Reveal from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/Reveal";
+import SectionMorph from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/SectionMorph";
 import ServiceCards from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/ServiceCards";
 import ServicesIntroSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/ServicesIntroSection";
 import SiteFooter from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/SiteFooter";
@@ -13,24 +15,62 @@ import SiteHeader from "@/components/sites/blivecleaning-com-9414df84/root-8a5ed
 import StatsSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/StatsSection";
 import TestimonialsSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/TestimonialsSection";
 
+/**
+ * Narrativa visual da home, em bandas alternadas:
+ *
+ *   dark  → hero
+ *   light → formulário · selos
+ *   dark  → sobre · diferenciais
+ *   light → áreas · depoimentos
+ *   dark  → serviços · cards · números
+ *   light → CTA · FAQ
+ *   dark  → rodapé
+ *
+ * Cada troca de banda passa por um <SectionMorph>, que sobe por cima da seção
+ * anterior com raio elíptico e achata durante o scroll — a mudança acontece
+ * como transformação, não como corte.
+ */
 export default function Home() {
   return (
     <div className="thermo-page flex min-h-full flex-col overflow-x-clip">
+      <Reveal />
       <SiteHeader />
+
       <main className="flex-1">
         <HeroSection />
-        <QuoteFormSection />
-        <BadgesStrip />
-        <AboutGreenSection />
-        <FeaturesHandSection />
-        <AreasWeServeSection />
-        <TestimonialsSection />
-        <ServicesIntroSection />
-        <ServiceCards />
-        <StatsSection />
-        <CtaGridSection />
-        <FaqSection />
+
+        <SectionMorph to="light" />
+        <div className="band-light">
+          <QuoteFormSection />
+          <BadgesStrip />
+        </div>
+
+        <SectionMorph to="dark" />
+        <div className="band-dark">
+          <AboutGreenSection />
+          <FeaturesHandSection />
+        </div>
+
+        <SectionMorph to="light" />
+        <div className="band-light">
+          <AreasWeServeSection />
+          <TestimonialsSection />
+        </div>
+
+        <SectionMorph to="dark" />
+        <div className="band-dark">
+          <ServicesIntroSection />
+          <ServiceCards />
+          <StatsSection />
+        </div>
+
+        <SectionMorph to="light" />
+        <div className="band-light">
+          <CtaGridSection />
+          <FaqSection />
+        </div>
       </main>
+
       <SiteFooter />
     </div>
   );
