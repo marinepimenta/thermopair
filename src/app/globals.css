@@ -288,6 +288,14 @@
   background-color: rgba(235, 236, 238, 0.05);
 }
 
+/* Trilho horizontal sem barra de rolagem visível (depoimentos no mobile).
+   O conteúdo continua acessível por teclado, gesto e roda do mouse. */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
 /* Sublinhado que cresce no hover, usado em links de navegação e listas. */
 .link-underline {
   background-image: linear-gradient(#ff6512, #ff6512);

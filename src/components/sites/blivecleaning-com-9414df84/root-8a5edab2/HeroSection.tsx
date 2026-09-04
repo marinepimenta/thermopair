@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { GoogleReviewsBadge } from "./SocialProof";
+
 const ASSET_BASE = "/sites/blivecleaning-com-9414df84/root-8a5edab2/images";
 
 const CHIPS = [
@@ -55,20 +57,29 @@ export default function HeroSection() {
               href="#request-a-quote"
               className="inline-flex items-center justify-center rounded-full bg-thermo-orange px-7 py-4 font-body text-[14px] font-semibold uppercase tracking-[0.06em] text-white transition-transform duration-300 hover:-translate-y-0.5 hover:bg-thermo-orange-deep"
             >
-              Get a free quote
+              Schedule Service
             </Link>
             <Link
-              href="tel:+10000000000"
+              href="tel:+17744980528"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-thermo-mist/25 px-7 py-4 font-body text-[14px] font-semibold uppercase tracking-[0.06em] text-white transition-colors duration-300 hover:border-thermo-orange hover:text-thermo-orange"
             >
               <PhoneIcon />
-              (000) 000-0000
+              (774) 498-0528
             </Link>
           </div>
 
-          <ul
-            className="reveal mt-11 flex flex-wrap gap-2.5"
+          {/* Prova social logo abaixo dos CTAs: primeira coisa que valida a
+              empresa, sem competir com o botão principal. */}
+          <div
+            className="reveal mt-8"
             style={{ "--i": 4 } as React.CSSProperties}
+          >
+            <GoogleReviewsBadge />
+          </div>
+
+          <ul
+            className="reveal mt-8 flex flex-wrap gap-2.5"
+            style={{ "--i": 5 } as React.CSSProperties}
           >
             {CHIPS.map((chip) => (
               <li

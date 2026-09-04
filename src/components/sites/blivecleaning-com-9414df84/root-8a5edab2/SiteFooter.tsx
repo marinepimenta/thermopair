@@ -124,10 +124,10 @@ export default function SiteFooter() {
             <p>
               <span className="font-semibold text-thermo-mist/80">Phone:</span>{" "}
               <a
-                href="tel:+10000000000"
+                href="tel:+17744980528"
                 className="link-underline transition-colors hover:text-thermo-orange"
               >
-                (000) 000-0000
+                (774) 498-0528
               </a>
             </p>
             <p>

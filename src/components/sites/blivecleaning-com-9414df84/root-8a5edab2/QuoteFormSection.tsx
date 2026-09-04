@@ -303,7 +303,7 @@ export default function QuoteFormSection() {
                   type="submit"
                   className="inline-flex cursor-pointer items-center justify-center rounded-full bg-thermo-orange px-8 py-4 font-body text-[14px] font-semibold uppercase tracking-[0.06em] text-white transition-transform duration-300 hover:-translate-y-0.5 hover:bg-thermo-orange-deep"
                 >
-                  Request My Free Quote
+                  Schedule Service
                 </button>
               </div>
             </form>

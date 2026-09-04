@@ -106,8 +106,12 @@ function HamburgerIcon({ open }: { open: boolean }) {
 
 export default function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  // Sobre a hero (escura) a navbar é transparente; depois dela vira sólida.
-  const [solid, setSolid] = useState(false);
+  /* Três estados:
+     "top"   — parada no topo da hero: totalmente transparente;
+     "dark"  — rolando ainda sobre a hero: barra escura com blur, para que o
+               conteúdo da hero não passe por baixo e colida com o logo;
+     "light" — passada a hero: barra clara com blur. */
+  const [mode, setMode] = useState<"top" | "dark" | "light">("top");
 
   useEffect(() => {
     let frame = 0;
@@ -118,10 +122,11 @@ export default function SiteHeader() {
         // Vira sólida quando o pé da hero encosta na navbar, para que nada
         // do conteúdo da hero passe por baixo de uma barra transparente.
         const hero = document.querySelector<HTMLElement>("[data-hero]");
-        const trigger = hero
+        const pastHero = hero
           ? hero.offsetTop + hero.offsetHeight - 140
           : window.innerHeight * 0.72;
-        setSolid(window.scrollY > trigger);
+        const y = window.scrollY;
+        setMode(y > pastHero ? "light" : y > 24 ? "dark" : "top");
       });
     };
     onScroll();
@@ -132,17 +137,20 @@ export default function SiteHeader() {
     };
   }, []);
 
-  // Sobre a hero, ou com o painel mobile aberto, o header usa tratamento claro.
-  const onDark = !solid && !mobileOpen;
+  const light = mode === "light" || mobileOpen;
+  // Enquanto o fundo é escuro, links, telefone e hamburger ficam claros.
+  const onDark = !light;
 
   return (
     <header
       className={cn(
         "fixed top-0 z-50 flex w-full flex-row items-center justify-between gap-2 px-4 md:gap-[10px] md:px-6",
         "transition-[background-color,height,box-shadow,backdrop-filter] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-        solid || mobileOpen
+        light
           ? "h-[72px] bg-white/90 shadow-[0_1px_0_rgba(19,19,19,0.08)] backdrop-blur-md md:h-[88px]"
-          : "nav-scrim h-[88px] bg-transparent md:h-[104px]",
+          : mode === "dark"
+            ? "h-[72px] bg-[#0b0b10]/85 shadow-[0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md md:h-[88px]"
+            : "nav-scrim h-[88px] bg-transparent md:h-[104px]",
       )}
     >
       <Link href="/" className="flex shrink-0 items-center">
@@ -194,10 +202,10 @@ export default function SiteHeader() {
           href="#request-a-quote"
           className="hidden rounded-full bg-thermo-orange px-6 py-3 text-center font-body text-[13px] font-semibold uppercase tracking-[0.05em] leading-[15px] text-white transition-colors duration-300 hover:bg-thermo-orange-deep lg:inline-block"
         >
-          Get A Free Quote
+          Schedule Service
         </Link>
         <Link
-          href="tel:+10000000000"
+          href="tel:+17744980528"
           className={cn(
             "inline-block rounded-full border px-3 py-2 text-center font-body text-[12px] font-semibold uppercase leading-[15px] transition-colors duration-300 sm:px-4 lg:px-5 lg:py-3 lg:text-[13px]",
             onDark
@@ -205,7 +213,7 @@ export default function SiteHeader() {
               : "border-[#2C2E33]/20 text-[#2C2E33] hover:border-thermo-orange hover:text-thermo-orange",
           )}
         >
-          (000) 000-0000
+          (774) 498-0528
         </Link>
         <button
           type="button"
@@ -257,7 +265,7 @@ export default function SiteHeader() {
                 className="block bg-thermo-orange px-6 py-4 text-center font-body text-[13px] font-semibold uppercase text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Get A Free Quote
+                Schedule Service
               </Link>
             </li>
           </ul>

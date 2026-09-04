@@ -18,13 +18,17 @@ import TestimonialsSection from "@/components/sites/blivecleaning-com-9414df84/r
 /**
  * Narrativa visual da home, em bandas alternadas:
  *
- *   dark  → hero
+ *   dark  → hero · depoimentos
  *   light → formulário · selos
  *   dark  → sobre · diferenciais
- *   light → áreas · depoimentos
+ *   light → áreas
  *   dark  → serviços · cards · números
  *   light → CTA · FAQ
  *   dark  → rodapé
+ *
+ * Os depoimentos vêm logo após a hero, ainda na banda escura: a prova social
+ * aparece antes de qualquer pedido de contato, e o par hero+reviews lê como
+ * uma única abertura escura.
  *
  * Cada troca de banda passa por um <SectionMorph>, que sobe por cima da seção
  * anterior com raio elíptico e achata durante o scroll — a mudança acontece
@@ -38,6 +42,11 @@ export default function Home() {
 
       <main className="flex-1">
         <HeroSection />
+
+        {/* Continua na banda escura da hero — sem morph entre as duas. */}
+        <div className="band-dark">
+          <TestimonialsSection />
+        </div>
 
         <SectionMorph to="light" />
         <div className="band-light">
@@ -54,7 +63,6 @@ export default function Home() {
         <SectionMorph to="light" />
         <div className="band-light">
           <AreasWeServeSection />
-          <TestimonialsSection />
         </div>
 
         <SectionMorph to="dark" />
