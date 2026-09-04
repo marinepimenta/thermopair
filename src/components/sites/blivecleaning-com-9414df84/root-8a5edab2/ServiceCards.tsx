@@ -5,22 +5,22 @@ const CARDS = [
   {
     title: ["Heating", "Installation"],
     href: "/heating-installation/",
-    image: "hvac/technician-installing-unit.avif",
+    image: "hvac/technician-ceiling-install.jpg",
   },
   {
     title: ["Heating", "Repair"],
     href: "/heating-repair/",
-    image: "hvac/technician-servicing-unit.avif",
+    image: "hvac/technician-diagnostics.jpg",
   },
   {
     title: ["Air", "Conditioning"],
     href: "/air-conditioning/",
-    image: "hvac/wall-unit-remote.jpg",
+    image: "hvac/technician-split-install.jpg",
   },
   {
     title: ["Commercial", "HVAC"],
     href: "/commercial-hvac/",
-    image: "hvac/commercial-ceiling-unit.jpg",
+    image: "hvac/technician-plant.jpg",
   },
 ];
 

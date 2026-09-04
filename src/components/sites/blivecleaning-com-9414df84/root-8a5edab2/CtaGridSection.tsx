@@ -27,7 +27,7 @@ export default function CtaGridSection() {
         <div className="group relative min-h-[300px] overflow-hidden rounded-lg lg:col-span-2 lg:row-span-1 lg:min-h-[340px]">
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-            style={{ backgroundImage: `url(${ASSET_BASE}/hvac/relaxing-under-ac.jpg)` }}
+            style={{ backgroundImage: `url(${ASSET_BASE}/hvac/technician-plant.jpg)` }}
           />
           <div className="absolute inset-0 bg-black/35" />
           <h2 className="absolute bottom-6 left-6 right-6 max-w-[551px] font-heading text-[32px] font-bold leading-[34px] text-white md:bottom-10 md:left-10 md:right-10 md:text-[40px] md:leading-[42px] lg:text-[56px] lg:leading-[56px]">
@@ -39,25 +39,25 @@ export default function CtaGridSection() {
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-2">
           <div
             role="img"
-            aria-label="Thermopair technician at work"
+            aria-label="Thermopair service van"
             className="group relative min-h-[240px] overflow-hidden rounded-lg lg:min-h-[340px]"
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
               style={{
-                backgroundImage: `url(${ASSET_BASE}/hvac/technician-servicing-unit.avif)`,
+                backgroundImage: `url(${ASSET_BASE}/hvac/service-van.jpg)`,
               }}
             />
           </div>
           <div
             role="img"
-            aria-label="A comfortable, well-heated home interior"
+            aria-label="Thermopair storefront window"
             className="group relative min-h-[240px] overflow-hidden rounded-lg lg:min-h-[340px]"
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
               style={{
-                backgroundImage: `url(${ASSET_BASE}/hvac/wall-unit-remote.jpg)`,
+                backgroundImage: `url(${ASSET_BASE}/hvac/storefront-window.jpg)`,
               }}
             />
           </div>

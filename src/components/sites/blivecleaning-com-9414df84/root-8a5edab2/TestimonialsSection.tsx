@@ -88,8 +88,8 @@ export default function TestimonialsSection() {
       <div className="mx-auto flex w-full max-w-[1320px] flex-col px-5 lg:flex-row lg:items-center lg:gap-[60px]">
         <div className="mb-8 w-full lg:mb-0 lg:w-[40%]">
           <Image
-            src={`${ASSET_BASE}/hvac/handshake-after-install.jpg`}
-            alt="Homeowners greeting a Thermopair technician after an installation"
+            src={`${ASSET_BASE}/hvac/technician-hivis.jpg`}
+            alt="Thermopair technician servicing a condenser unit"
             width={462}
             height={512}
             className="h-[280px] w-full rounded-[8px] object-cover md:h-[380px] lg:h-auto"

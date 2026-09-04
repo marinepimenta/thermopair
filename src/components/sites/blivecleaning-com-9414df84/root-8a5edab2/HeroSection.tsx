@@ -47,7 +47,7 @@ export default function HeroSection() {
           <div
             className="relative h-[300px] w-full bg-cover bg-center md:h-[420px] lg:h-[809px] lg:w-[44%] lg:ml-auto"
             style={{
-              backgroundImage: `url(${ASSET_BASE}/hvac/relaxing-under-ac.jpg)`,
+              backgroundImage: `url(${ASSET_BASE}/hvac/technician-ceiling-install.jpg)`,
             }}
           >
           </div>

@@ -7,7 +7,7 @@ export default function AboutGreenSection() {
       <div
         className="h-[260px] w-full bg-cover bg-center md:h-[380px] lg:h-auto lg:w-[46%] lg:min-h-[875px]"
         style={{
-          backgroundImage: `url(${ASSET_BASE}/hvac/technician-installing-unit.avif)`,
+          backgroundImage: `url(${ASSET_BASE}/hvac/technician-split-install.jpg)`,
         }}
       />
       <div className="relative flex flex-col justify-center px-5 py-10 md:px-8 md:py-14 lg:w-[54%] lg:px-[80px] lg:py-[80px] lg:pl-[70px]">
