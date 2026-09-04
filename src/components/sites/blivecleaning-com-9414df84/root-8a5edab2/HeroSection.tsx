@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const ASSET_BASE =
@@ -48,18 +47,9 @@ export default function HeroSection() {
           <div
             className="relative h-[300px] w-full bg-cover bg-center md:h-[420px] lg:h-[809px] lg:w-[44%] lg:ml-auto"
             style={{
-              backgroundImage: `url(${ASSET_BASE}/Mock-Sofa.jpg)`,
+              backgroundImage: `url(${ASSET_BASE}/hvac/relaxing-under-ac.avif)`,
             }}
           >
-            <div className="absolute bottom-0 left-1/2 z-[1] h-[200px] w-[80%] -translate-x-1/2 md:h-[280px] lg:left-[140px] lg:top-[520.7px] lg:h-[317px] lg:w-[636px] lg:translate-x-0">
-              <Image
-                src={`${ASSET_BASE}/Character-05.png.webp`}
-                alt="Placeholder illustration"
-                width={636}
-                height={317}
-                className="h-full w-full object-contain object-bottom"
-              />
-            </div>
           </div>
         </div>
       </div>

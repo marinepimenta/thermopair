@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const ASSET_BASE =
@@ -77,13 +76,6 @@ export default function StatsSection() {
             cost, and careful with your home or business as if it were our
             own.
           </p>
-          <Image
-            src={`${ASSET_BASE}/Character-5.png`}
-            alt="Thermopair character"
-            width={180}
-            height={259}
-            className="mt-6 h-auto w-[180px]"
-          />
         </div>
 
         <div

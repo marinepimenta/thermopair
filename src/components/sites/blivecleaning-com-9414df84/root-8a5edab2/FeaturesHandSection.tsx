@@ -8,8 +8,8 @@ export default function FeaturesHandSection() {
     <section className="min-h-[auto] w-full bg-white px-5 py-10 md:px-8 md:py-12 lg:min-h-[495px] lg:py-[60px]">
       <div className="mx-auto flex w-full max-w-[1320px] flex-col lg:flex-row lg:items-center lg:gap-[60px]">
         <Image
-          src={`${ASSET_BASE}/Hand-01.jpg`}
-          alt="Placeholder photo"
+          src={`${ASSET_BASE}/hvac/portrait-ac-remote.avif`}
+          alt="Wall-mounted unit being adjusted with a remote"
           width={300}
           height={382}
           className="h-[240px] w-full rounded-lg object-cover md:h-[320px] lg:h-[382px] lg:w-auto"
