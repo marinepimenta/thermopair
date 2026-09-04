@@ -6,58 +6,62 @@ import Image from "next/image";
 const ASSET_BASE =
   "/sites/blivecleaning-com-9414df84/root-8a5edab2/images";
 
+// PLACEHOLDER: replace with real, permissioned Thermopair customer reviews before launch.
 const REVIEWS = [
   {
     quote:
-      "These girls are amazing and by far the best cleaning service we have ever used. We used Blive for a few move in/outs and it was incredible how amazing the house looked. We also use her for a weekly cleaning. She is kind, consistent and detail oriented. Ale cleaned my house in Princeton MA and now cleans our new house in Hopkinton MA.",
-    author: "Jill Klasko",
+      "Customer review 1 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 1",
   },
   {
     quote:
-      "Every inch of my house was cleaned thoroughly - it has never been so clean! I was so impressed and happy with these cleaners.",
-    author: "Kate Dahmen",
+      "Customer review 2 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 2",
   },
   {
     quote:
-      "This is my second time hiring Ale’s cleaning service and I am very happy with the results. Ale and her team accommodated my available day and time and did a thorough cleaning job. Thank you so much!",
-    author: "Meagan Poh",
+      "Customer review 3 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 3",
   },
   {
     quote:
-      "Our experience with Blive Cleaning Services has been great! Team was on time (early even!), friendly, efficient, and the results were even better than I had expected. Very very grateful to have found Blive Cleaning Services!",
-    author: "Shannon P",
+      "Customer review 4 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 4",
   },
   {
     quote:
-      "Blive Cleaning did a fantastic job doing a deep clean of our dental office. They made sure to get all the nooks and crannies and everything looked very clean when they were finished. Our Team would certainly recommend them for any cleaning needed!",
-    author: "Raynor Dental Peterborough",
+      "Customer review 5 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 5",
   },
   {
     quote:
-      "This is a great company. The turn around time is what you as a customer is looking for.",
-    author: "Jennifer Hancock",
-  },
-  {
-    quote: "Excellent service and extremely dependable. So pleased with this service.",
-    author: "Elizabeth Hofstetter",
-  },
-  {
-    quote: "Very responsive and they do a great job would definitely recommend!",
-    author: "Country Kidz TV",
-  },
-  {
-    quote: "Responsive, friendly, very thorough cleaning. It looks and smells fantastic.",
-    author: "Gloria Cloutier",
+      "Customer review 6 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 6",
   },
   {
     quote:
-      "Did a good cleaning of our house before we moved in. Dependable. Notified us of weather postponement and easy reschedule.",
-    author: "Claire Radice",
+      "Customer review 7 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 7",
   },
   {
     quote:
-      "Ale is dependable and trustworthy. I am very picky about how my house is cleaned and Ale met all of my expectations.",
-    author: "Matt Thomas",
+      "Customer review 8 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 8",
+  },
+  {
+    quote:
+      "Customer review 9 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 9",
+  },
+  {
+    quote:
+      "Customer review 10 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 10",
+  },
+  {
+    quote:
+      "Customer review 11 goes here — replace with a real review collected from a Thermopair client.",
+    author: "Client Name 11",
   },
 ];
 
@@ -67,7 +71,7 @@ function Star() {
       width="18"
       height="18"
       viewBox="0 0 24 24"
-      fill="#FFBF40"
+      fill="#FF6512"
       aria-hidden="true"
     >
       <path d="M12 2l2.9 6.26 6.9.6-5.2 4.55 1.57 6.79L12 16.9l-6.17 3.3 1.57-6.79-5.2-4.55 6.9-.6L12 2z" />
@@ -85,7 +89,7 @@ export default function TestimonialsSection() {
         <div className="mb-8 w-full lg:mb-0 lg:w-[40%]">
           <Image
             src={`${ASSET_BASE}/homepage-testimonials-924x1024.jpg`}
-            alt="Blive Cleaning testimonials"
+            alt="Thermopair testimonials"
             width={462}
             height={512}
             className="h-[280px] w-full rounded-[8px] object-cover md:h-[380px] lg:h-auto"
@@ -93,10 +97,10 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="w-full lg:flex-1">
-          <h3 className="mb-3 font-sofia text-[24px] font-bold leading-[24px] text-blive-lime">
+          <h3 className="mb-3 font-heading text-[24px] font-bold leading-[24px] text-thermo-orange">
             TESTIMONIALS
           </h3>
-          <h2 className="mb-8 font-sofia text-[32px] font-bold leading-[34px] text-black md:text-[40px] md:leading-[42px] lg:text-[48px] lg:leading-[48px]">
+          <h2 className="mb-8 font-heading text-[32px] font-bold leading-[34px] text-black md:text-[40px] md:leading-[42px] lg:text-[48px] lg:leading-[48px]">
             What Our Clients Say About Us
           </h2>
 
@@ -106,10 +110,10 @@ export default function TestimonialsSection() {
                 <Star key={i} />
               ))}
             </div>
-            <p className="font-work text-[18px] font-normal italic leading-[28px] text-[#333333] lg:text-[20px] lg:leading-[32px]">
+            <p className="font-body text-[18px] font-normal italic leading-[28px] text-[#2C2E33] lg:text-[20px] lg:leading-[32px]">
               {review.quote}
             </p>
-            <p className="mt-4 font-work text-[16px] font-semibold text-black">
+            <p className="mt-4 font-body text-[16px] font-semibold text-black">
               {review.author}
             </p>
           </div>
@@ -122,7 +126,7 @@ export default function TestimonialsSection() {
                 aria-label={`Show review ${i + 1}`}
                 onClick={() => setActive(i)}
                 className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                  i === active ? "bg-blive-green" : "bg-black/20"
+                  i === active ? "bg-thermo-orange" : "bg-thermo-slate/40"
                 }`}
               />
             ))}

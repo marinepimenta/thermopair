@@ -5,16 +5,16 @@ const ASSET_BASE =
   "/sites/blivecleaning-com-9414df84/root-8a5edab2/images";
 
 const SERVICES = [
-  "Recurring Cleaning",
-  "One-Time Cleaning",
-  "Deep Cleaning",
-  "Move in & Out Cleaning",
-  "Post-Construction Cleaning",
-  "Commercial Cleaning",
-  "Office Cleaning",
-  "Healthcare Facility Cleaning",
-  "Educational Facility Cleaning",
-  "Retail Cleaning",
+  "Heating Installation",
+  "Heating Repair",
+  "AC Installation",
+  "AC Repair",
+  "Seasonal Maintenance",
+  "Emergency Service",
+  "Commercial HVAC",
+  "Office Heating & Cooling",
+  "Restaurant Climate Systems",
+  "Retail Climate Systems",
 ];
 
 const QUICK_LINKS = [
@@ -24,7 +24,7 @@ const QUICK_LINKS = [
   "Customer Policies and Guidelines",
   "Privacy Policy",
   "Service Areas",
-  "Gift Cards",
+  "Maintenance Plans",
 ];
 
 function FacebookIcon() {
@@ -63,30 +63,30 @@ export default function SiteFooter() {
   return (
     <footer>
       {/* Band A - logo badge */}
-      <div className="flex h-[138px] items-center justify-center bg-blive-green">
+      <div className="grad-glow-cool flex h-[138px] items-center justify-center">
         <Image
-          src={`${ASSET_BASE}/Logo-Blive-Horizontal-DarkGreen-1.png`}
-          alt="Blive Cleaning"
-          width={220}
-          height={97}
-          className="h-[97px] w-auto"
+          src={`${ASSET_BASE}/logo-thermopair-horizontal-gradient.svg`}
+          alt="Thermopair — Climate Care"
+          width={340}
+          height={57}
+          className="h-[57px] w-auto"
         />
       </div>
 
       {/* Band B - link columns */}
-      <div className="bg-blive-green pb-20 pt-10">
+      <div className="bg-thermo-ink pb-20 pt-10">
         <div className="mx-auto grid w-full max-w-[1320px] grid-cols-1 gap-10 px-5 md:grid-cols-3">
           <div>
-            <h2 className="mb-5 font-sofia text-[30px] font-semibold leading-[30px] text-black">
+            <h2 className="mb-5 font-heading text-[30px] font-semibold leading-[30px] text-white">
               Our Services
             </h2>
-            <div className="mb-5 h-px w-full bg-black/20" />
+            <div className="mb-5 h-px w-full bg-white/20" />
             <ul>
               {SERVICES.map((s) => (
                 <li key={s}>
                   <Link
                     href="#"
-                    className="font-work text-[19px] font-normal leading-[40px] text-black hover:underline"
+                    className="font-body text-[19px] font-normal leading-[40px] text-thermo-mist hover:text-thermo-orange-pale"
                   >
                     {s}
                   </Link>
@@ -96,16 +96,16 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="mb-5 font-sofia text-[30px] font-semibold leading-[30px] text-black">
+            <h2 className="mb-5 font-heading text-[30px] font-semibold leading-[30px] text-white">
               Quick Links
             </h2>
-            <div className="mb-5 h-px w-full bg-black/20" />
+            <div className="mb-5 h-px w-full bg-white/20" />
             <ul>
               {QUICK_LINKS.map((s) => (
                 <li key={s}>
                   <Link
                     href="#"
-                    className="font-work text-[19px] font-normal leading-[40px] text-black hover:underline"
+                    className="font-body text-[19px] font-normal leading-[40px] text-thermo-mist hover:text-thermo-orange-pale"
                   >
                     {s}
                   </Link>
@@ -115,28 +115,31 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="mb-5 font-sofia text-[30px] font-semibold leading-[30px] text-black">
+            <h2 className="mb-5 font-heading text-[30px] font-semibold leading-[30px] text-white">
               Contact Us
             </h2>
-            <div className="mb-5 h-px w-full bg-black/20" />
-            <div className="font-work text-[19px] font-normal leading-[40px] text-black">
+            <div className="mb-5 h-px w-full bg-white/20" />
+            <div className="font-body text-[19px] font-normal leading-[40px] text-thermo-mist">
               <p>
-                <span className="font-semibold">Location:</span> 14 Jungle
-                Rd, Leominster, MA 01453
+                <span className="font-semibold">Location:</span> 000 Example
+                St, Boston, MA 00000
               </p>
               <p>
                 <span className="font-semibold">Phone:</span>{" "}
-                <a href="tel:+17744980527" className="hover:underline">
-                  (774) 498-0527
+                <a
+                  href="tel:+10000000000"
+                  className="hover:text-thermo-orange-pale"
+                >
+                  (000) 000-0000
                 </a>
               </p>
               <p>
                 <span className="font-semibold">Email:</span>{" "}
                 <a
-                  href="mailto:contact@blivecleaning.com"
-                  className="hover:underline"
+                  href="mailto:hello@thermopair.com"
+                  className="hover:text-thermo-orange-pale"
                 >
-                  contact@blivecleaning.com
+                  hello@thermopair.com
                 </a>
               </p>
               <p>
@@ -144,35 +147,36 @@ export default function SiteFooter() {
                 Fri: 8 AM – 5 PM
               </p>
               <p>
-                <span className="font-semibold">Cleaning Hours:</span> 24/7
+                <span className="font-semibold">Emergency Service:</span>{" "}
+                24/7
               </p>
             </div>
             <div className="mt-4 flex flex-row gap-3">
               <a
                 href="#"
                 aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-blive-dark text-white transition-colors hover:bg-black"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-thermo-orange"
               >
                 <FacebookIcon />
               </a>
               <a
                 href="#"
                 aria-label="Youtube"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-blive-dark text-white transition-colors hover:bg-black"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-thermo-orange"
               >
                 <YoutubeIcon />
               </a>
               <a
                 href="#"
                 aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-blive-dark text-white transition-colors hover:bg-black"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-thermo-orange"
               >
                 <InstagramIcon />
               </a>
               <a
                 href="#"
                 aria-label="Linkedin"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-blive-dark text-white transition-colors hover:bg-black"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-thermo-orange"
               >
                 <LinkedinIcon />
               </a>
@@ -182,9 +186,9 @@ export default function SiteFooter() {
       </div>
 
       {/* Band C - copyright bar */}
-      <div className="flex h-[78px] items-center justify-center bg-blive-dark">
-        <p className="font-work text-[15px] text-white">
-          Copyright 2024 by Blive Cleaning All Right Reserved.
+      <div className="flex h-[78px] items-center justify-center bg-thermo-ink">
+        <p className="font-body text-[15px] text-white">
+          Copyright 2026 by Thermopair. All Rights Reserved.
         </p>
       </div>
     </footer>

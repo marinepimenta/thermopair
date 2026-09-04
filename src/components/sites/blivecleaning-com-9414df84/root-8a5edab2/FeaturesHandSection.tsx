@@ -9,7 +9,7 @@ export default function FeaturesHandSection() {
       <div className="mx-auto flex w-full max-w-[1320px] flex-col lg:flex-row lg:items-center lg:gap-[60px]">
         <Image
           src={`${ASSET_BASE}/Hand-01.jpg`}
-          alt="Cleaning professional"
+          alt="Placeholder photo"
           width={300}
           height={382}
           className="h-[240px] w-full rounded-lg object-cover md:h-[320px] lg:h-[382px] lg:w-auto"
@@ -17,24 +17,24 @@ export default function FeaturesHandSection() {
 
         <div className="mt-8 flex flex-1 flex-col gap-10 lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-10">
           <div>
-            <h3 className="mb-3 font-sofia text-[24px] font-bold leading-[26px] text-black md:text-[28px] md:leading-[30px] lg:text-[32px] lg:leading-[32px]">
-              Qualified &amp; experienced team
+            <h3 className="mb-3 font-heading text-[24px] font-bold leading-[26px] text-black md:text-[28px] md:leading-[30px] lg:text-[32px] lg:leading-[32px]">
+              Trained &amp; experienced technicians
             </h3>
-            <p className="max-w-[620px] font-work text-[17px] font-normal leading-[27px] text-black md:text-[19px] md:leading-[29px] lg:text-[22px] lg:leading-[33px]">
-              Our professionals are highly trained and experienced, ensuring
-              your home is cleaned to the highest standards.
+            <p className="max-w-[620px] font-body text-[17px] font-normal leading-[27px] text-black md:text-[19px] md:leading-[29px] lg:text-[22px] lg:leading-[33px]">
+              Our technicians are trained, licensed, and experienced, so
+              your system is installed and serviced to the highest standard.
             </p>
           </div>
 
           <div>
-            <h3 className="mb-3 font-sofia text-[24px] font-bold leading-[26px] text-black md:text-[28px] md:leading-[30px] lg:text-[32px] lg:leading-[32px]">
+            <h3 className="mb-3 font-heading text-[24px] font-bold leading-[26px] text-black md:text-[28px] md:leading-[30px] lg:text-[32px] lg:leading-[32px]">
               100% <br />
               Guaranteed
             </h3>
-            <p className="max-w-[620px] font-work text-[17px] font-normal leading-[27px] text-black md:text-[19px] md:leading-[29px] lg:text-[22px] lg:leading-[33px]">
-              We stand behind our work. If you&apos;re not completely
-              satisfied, we&apos;ll make it right — your satisfaction is
-              fully guaranteed.
+            <p className="max-w-[620px] font-body text-[17px] font-normal leading-[27px] text-black md:text-[19px] md:leading-[29px] lg:text-[22px] lg:leading-[33px]">
+              We stand behind our work. If something isn&apos;t right after
+              we leave, we come back and fix it — that is our guarantee to
+              you.
             </p>
           </div>
         </div>

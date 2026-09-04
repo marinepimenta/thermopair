@@ -15,61 +15,60 @@ type NavItem = {
 
 const NAV: NavItem[] = [
   {
-    label: "Residential Cleaning",
-    href: "/residential-cleaning/",
+    label: "Residential HVAC",
+    href: "/residential-hvac/",
     sub: [
-      "Residential Cleaning",
-      "Recurring Cleaning",
-      "Deep Cleaning",
-      "Move-In & Move-Out Cleaning",
-      "One-Time Cleaning",
-      "Post-Construction Cleaning",
+      "Residential HVAC",
+      "Heating Installation",
+      "Heating Repair",
+      "AC Installation",
+      "AC Repair",
+      "Seasonal Maintenance",
     ],
   },
   {
-    label: "Commercial Cleaning",
-    href: "/commercial-cleaning/",
+    label: "Commercial HVAC",
+    href: "/commercial-hvac/",
     sub: [
-      "Commercial Cleaning",
-      "Office Cleaning",
-      "Healthcare Facility Cleaning Services",
-      "Educational Facility Cleaning",
-      "Retail Cleaning",
+      "Commercial HVAC",
+      "Restaurant Climate Systems",
+      "Office Heating & Cooling",
+      "Retail Climate Systems",
+      "Preventive Maintenance",
     ],
   },
-  { label: "Checklists", href: "/checklist/", sub: [] },
+  { label: "Maintenance Plans", href: "/maintenance-plans/", sub: [] },
   {
     label: "Areas We Serve",
     href: "/areas-we-serve/",
     sub: [
       "Areas We Serve",
-      "Fitchburg, MA",
-      "Groton, MA",
-      "Harvard, MA",
-      "Holden, MA",
-      "Lancaster, MA",
-      "Leominster, MA",
-      "Lunenburg, MA",
-      "Sterling, MA",
-      "Hollis, NH",
-      "Pepperell, MA",
-      "Worcester, MA",
-      "Westminster, MA",
-      "Brookline, NH",
-      "Keene, NH",
-      "Peterborough, NH",
-      "Jaffrey, NH",
-      "Dublin, NH",
-      "Wilton, NH",
-      "Rindge, NH",
-      "Temple, NH",
-      "Swanzey, NH",
+      "Boston, MA",
+      "Cambridge, MA",
+      "Somerville, MA",
+      "Newton, MA",
+      "Brookline, MA",
+      "Quincy, MA",
+      "Waltham, MA",
+      "Medford, MA",
+      "Malden, MA",
+      "Everett, MA",
+      "Revere, MA",
+      "Lynn, MA",
+      "Salem, MA",
+      "Peabody, MA",
+      "Woburn, MA",
+      "Framingham, MA",
+      "Natick, MA",
+      "Dedham, MA",
+      "Needham, MA",
+      "Watertown, MA",
     ],
   },
   {
     label: "About Us",
     href: "/about-us/",
-    sub: ["About Us", "About the Owner", "Join our team"],
+    sub: ["About Us", "Our Story", "Join Our Team"],
   },
   { label: "Contact Us", href: "/contact-us/", sub: [] },
 ];
@@ -81,7 +80,7 @@ function HamburgerIcon({ open }: { open: boolean }) {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#333"
+      stroke="#2C2E33"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -107,15 +106,15 @@ export default function SiteHeader() {
 
   return (
     <header
-      className="sticky top-0 z-50 flex w-full flex-row items-center justify-between gap-[10px] bg-white px-6 py-[10px] transition-[background,border,box-shadow,transform] duration-300 h-[84px] md:h-[133px]"
+      className="sticky top-0 z-50 flex w-full flex-row items-center justify-between gap-2 md:gap-[10px] bg-white px-4 py-[10px] md:px-6 transition-[background,border,box-shadow,transform] duration-300 h-[84px] md:h-[133px]"
     >
       <Link href="/" className="flex shrink-0 items-center">
         <Image
-          src={`${ASSET_BASE}/Logo-Blive-Horizontal-Cleaning-Tagline-Green-1.png`}
-          alt="Blive Cleaning"
-          width={164}
-          height={72}
-          className="h-[52px] w-auto md:h-[72px]"
+          src={`${ASSET_BASE}/logo-thermopair-horizontal-gradient.svg`}
+          alt="Thermopair — Climate Care"
+          width={268}
+          height={45}
+          className="h-[26px] w-auto sm:h-[32px] md:h-[45px]"
           priority
         />
       </Link>
@@ -127,10 +126,10 @@ export default function SiteHeader() {
             <li key={item.label} className="group relative">
               <Link
                 href={item.href}
-                className="relative font-work text-[13px] font-medium text-[#333333] transition-colors duration-300 hover:text-blive-green"
+                className="relative font-body text-[13px] font-medium text-[#2C2E33] transition-colors duration-300 hover:text-[#FF6512]"
               >
                 {item.label}
-                <span className="pointer-events-none absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 bg-blive-green transition-transform duration-300 group-hover:scale-x-100" />
+                <span className="pointer-events-none absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 bg-[#FF6512] transition-transform duration-300 group-hover:scale-x-100" />
               </Link>
               {item.sub.length > 0 && (
                 <div className="invisible absolute left-0 top-full z-50 min-w-[240px] max-h-[420px] overflow-y-auto bg-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:visible group-hover:opacity-100">
@@ -138,7 +137,7 @@ export default function SiteHeader() {
                     <Link
                       key={sub}
                       href="#"
-                      className="block px-4 py-2 font-work text-[13px] text-[#333333] transition-colors hover:bg-blive-green hover:text-white"
+                      className="block px-4 py-2 font-body text-[13px] text-[#2C2E33] transition-colors hover:bg-[#FF6512] hover:text-white"
                     >
                       {sub}
                     </Link>
@@ -154,15 +153,15 @@ export default function SiteHeader() {
       <div className="flex shrink-0 flex-row items-center gap-[10px]">
         <Link
           href="#request-a-quote"
-          className="hidden lg:inline-block px-6 py-3 font-work text-[15px] font-medium uppercase leading-[15px] text-center bg-black text-white"
+          className="hidden lg:inline-block px-6 py-3 font-body text-[15px] font-medium uppercase leading-[15px] text-center bg-thermo-orange text-white"
         >
-          Request A Quote
+          Get A Free Quote
         </Link>
         <Link
-          href="tel:+17744980527"
-          className="inline-block px-6 py-3 font-work text-[15px] font-medium uppercase leading-[15px] text-center bg-blive-yellow text-black"
+          href="tel:+10000000000"
+          className="inline-block px-3 py-2 font-body text-[12px] font-medium uppercase leading-[15px] text-center bg-thermo-purple text-white sm:px-4 lg:px-6 lg:py-3 lg:text-[15px]"
         >
-          (774) 498-0527
+          (000) 000-0000
         </Link>
         <button
           type="button"
@@ -183,7 +182,7 @@ export default function SiteHeader() {
               <li key={item.label} className="border-b border-black/10">
                 <Link
                   href={item.href}
-                  className="block px-6 py-3 font-work text-[13px] font-medium text-[#333333]"
+                  className="block px-6 py-3 font-body text-[13px] font-medium text-[#2C2E33]"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
@@ -194,7 +193,7 @@ export default function SiteHeader() {
                       <li key={sub}>
                         <Link
                           href="#"
-                          className="block px-10 py-1.5 font-work text-[13px] text-[#555555]"
+                          className="block px-10 py-1.5 font-body text-[13px] text-[#555555]"
                           onClick={() => setMobileOpen(false)}
                         >
                           {sub}
@@ -208,10 +207,10 @@ export default function SiteHeader() {
             <li>
               <Link
                 href="#request-a-quote"
-                className="block px-6 py-4 font-work text-[13px] font-medium uppercase text-center bg-black text-white"
+                className="block px-6 py-4 font-body text-[13px] font-medium uppercase text-center bg-thermo-orange text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Request A Quote
+                Get A Free Quote
               </Link>
             </li>
           </ul>

@@ -6,11 +6,12 @@ import { useEffect, useRef, useState } from "react";
 const ASSET_BASE =
   "/sites/blivecleaning-com-9414df84/root-8a5edab2/images";
 
+// PLACEHOLDER: replace with Thermopair's real figures before launch.
 const STATS = [
-  { value: 2, suffix: "K+", label: "Happy Customers" },
-  { value: 7, suffix: "+", label: "Years Experience" },
-  { value: 98, suffix: "%", label: "Project Success" },
-  { value: 140, suffix: "+", label: "Five Star Reviews" },
+  { value: 0, suffix: "K+", label: "Homes Served" },
+  { value: 0, suffix: "+", label: "Years Experience" },
+  { value: 0, suffix: "%", label: "Repairs Completed" },
+  { value: 0, suffix: "+", label: "Five Star Reviews" },
 ];
 
 function easeOutQuad(t: number) {
@@ -65,20 +66,20 @@ export default function StatsSection() {
     <section className="bg-white pb-20">
       <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-5 px-5 lg:flex-row lg:items-stretch">
         <div className="flex flex-col gap-5 pt-10 lg:w-[520px] lg:shrink-0 lg:pt-[60px]">
-          <h3 className="max-w-[520px] font-sofia text-[34px] font-bold uppercase leading-[36px] text-blive-green md:text-[44px] md:leading-[46px] lg:text-[57px] lg:leading-[57px]">
-            GET SOME RELIEF BY <br />
-            CHOOSING US!
+          <h3 className="max-w-[520px] font-heading text-[34px] font-bold uppercase leading-[36px] text-thermo-orange md:text-[44px] md:leading-[46px] lg:text-[57px] lg:leading-[57px]">
+            COMFORT IS CLOSER <br />
+            THAN YOU THINK!
           </h3>
-          <p className="max-w-[486px] font-work text-base font-medium leading-[25px] text-black md:text-[18px] md:leading-[27px]">
-            At the core of our service is a commitment to treat your home or
-            workplace in Fitchburg, Harvard, or Sterling with the same
-            respect and attention to detail as our own. We&rsquo;re
-            passionate about not just cleaning, but also giving you back
-            time to cherish life&rsquo;s important moments.
+          <p className="max-w-[486px] font-body text-base font-medium leading-[25px] text-black md:text-[18px] md:leading-[27px]">
+            Wanderson started Thermopair after living through a failed
+            heating system and service that never called back. We built the
+            company we wished we had found: quick to answer, straight about
+            cost, and careful with your home or business as if it were our
+            own.
           </p>
           <Image
             src={`${ASSET_BASE}/Character-5.png`}
-            alt="Blive cleaning character"
+            alt="Thermopair character"
             width={180}
             height={259}
             className="mt-6 h-auto w-[180px]"
@@ -87,16 +88,16 @@ export default function StatsSection() {
 
         <div
           ref={cardRef}
-          className="min-h-0 rounded-lg bg-blive-dark px-8 py-12 lg:min-h-[580px] lg:flex-1 lg:px-12 lg:py-[60px]"
+          className="min-h-0 rounded-lg grad-glow-warm px-8 py-12 lg:min-h-[580px] lg:flex-1 lg:px-12 lg:py-[60px]"
         >
           <div className="grid h-full grid-cols-1 place-content-center gap-x-10 gap-y-10 sm:grid-cols-2 lg:gap-y-14">
             {STATS.map((stat, i) => (
               <div key={stat.label} className="text-center">
-                <div className="font-sofia text-[56px] font-bold leading-[56px] text-blive-lime md:text-[72px] md:leading-[72px] lg:text-[96px] lg:leading-[96px]">
+                <div className="font-heading text-[56px] font-bold leading-[56px] text-white md:text-[72px] md:leading-[72px] lg:text-[96px] lg:leading-[96px]">
                   {counts[i]}
                   {stat.suffix}
                 </div>
-                <div className="mt-2 font-work text-base font-medium text-white md:text-[18px]">
+                <div className="mt-2 font-body text-base font-medium text-white md:text-[18px]">
                   {stat.label}
                 </div>
               </div>

@@ -32,14 +32,14 @@ const initialState: FormState = {
 };
 
 const desiredServiceOptions = [
-  "Deep Cleaning",
-  "One-time Cleaning",
-  "Move In/Out Cleaning",
-  "Recurring Cleaning (Weekly)",
-  "Recurring Cleaning (Bi-weekly)",
-  "Recurring Cleaning (Monthly)",
-  "Post-Construction Cleaning",
-  "Customized",
+  "Heating Installation",
+  "Heating Repair",
+  "AC Installation",
+  "AC Repair",
+  "Seasonal Maintenance",
+  "Emergency Service",
+  "Commercial HVAC",
+  "System Inspection",
   "Other services",
 ];
 
@@ -72,7 +72,7 @@ const hearAboutUsOptions = [
 ];
 
 const fieldBaseClasses =
-  "h-[46px] w-full rounded-[2px] border border-[#d8d5d0] bg-white px-[14px] font-work text-[15px] text-[#333333] outline-none transition-colors placeholder:text-[#8a8a8a] focus:border-blive-green focus:ring-1 focus:ring-blive-green";
+  "h-[46px] w-full rounded-[2px] border border-[#EBECEE] bg-white px-[14px] font-body text-[15px] text-[#2C2E33] outline-none transition-colors placeholder:text-[#8F97A2] focus:border-thermo-orange focus:ring-1 focus:ring-thermo-orange";
 
 function SelectChevron() {
   return (
@@ -85,7 +85,7 @@ function SelectChevron() {
     >
       <path
         d="M2.5 4.5L6 8L9.5 4.5"
-        stroke="#8a8a8a"
+        stroke="#8F97A2"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -110,17 +110,17 @@ export default function QuoteFormSection() {
   return (
     <section
       id="request-a-quote"
-      className="w-full bg-blive-cream px-5 py-10 sm:px-8 sm:py-[60px] md:px-8 md:py-[60px] lg:px-[60px] lg:pt-[60px] lg:pb-[80px]"
+      className="w-full bg-thermo-paper px-5 py-10 sm:px-8 sm:py-[60px] md:px-8 md:py-[60px] lg:px-[60px] lg:pt-[60px] lg:pb-[80px]"
     >
       <div className="mx-auto w-full max-w-[1100px]">
-        <h2 className="mx-auto mb-10 max-w-[900px] text-center font-sofia text-[26px] font-bold uppercase leading-[32px] text-black lg:text-[36px] lg:leading-[42px]">
-          BOOK AN APPOINTMENT WITH THE #1 CLEANING COMPANY IN THE AREA
+        <h2 className="mx-auto mb-10 max-w-[900px] text-center font-heading text-[26px] font-bold uppercase leading-[32px] text-black lg:text-[36px] lg:leading-[42px]">
+          BOOK A VISIT WITH A HEATING AND COOLING TEAM YOU CAN TRUST
         </h2>
 
         {submitted ? (
           <div className="flex flex-col items-center justify-center py-10 text-center">
-            <h3 className="font-sofia text-[28px] font-bold text-black">Thank you!</h3>
-            <p className="mt-3 font-work text-[18px] text-[#6f6f6f]">
+            <h3 className="font-heading text-[28px] font-bold text-black">Thank you!</h3>
+            <p className="mt-3 font-body text-[18px] text-[#8F97A2]">
               We received your request and will be in touch shortly.
             </p>
           </div>
@@ -204,13 +204,13 @@ export default function QuoteFormSection() {
                   aria-label="Desired Service (Required)"
                   value={form.desiredService}
                   onChange={(e) => handleChange("desiredService", e.target.value)}
-                  className={cn(fieldBaseClasses, "appearance-none pr-9", form.desiredService === "" && "text-[#8a8a8a]")}
+                  className={cn(fieldBaseClasses, "appearance-none pr-9", form.desiredService === "" && "text-[#8F97A2]")}
                 >
                   <option value="" disabled hidden>
                     Desired Service
                   </option>
                   {desiredServiceOptions.map((option) => (
-                    <option key={option} value={option} className="text-[#333333]">
+                    <option key={option} value={option} className="text-[#2C2E33]">
                       {option}
                     </option>
                   ))}
@@ -223,13 +223,13 @@ export default function QuoteFormSection() {
                   aria-label="Square Footage (Required)"
                   value={form.squareFootage}
                   onChange={(e) => handleChange("squareFootage", e.target.value)}
-                  className={cn(fieldBaseClasses, "appearance-none pr-9", form.squareFootage === "" && "text-[#8a8a8a]")}
+                  className={cn(fieldBaseClasses, "appearance-none pr-9", form.squareFootage === "" && "text-[#8F97A2]")}
                 >
                   <option value="" disabled hidden>
                     Square Footage
                   </option>
                   {squareFootageOptions.map((option) => (
-                    <option key={option} value={option} className="text-[#333333]">
+                    <option key={option} value={option} className="text-[#2C2E33]">
                       {option}
                     </option>
                   ))}
@@ -244,13 +244,13 @@ export default function QuoteFormSection() {
                   aria-label="How did you hear about us? (Required)"
                   value={form.hearAboutUs}
                   onChange={(e) => handleChange("hearAboutUs", e.target.value)}
-                  className={cn(fieldBaseClasses, "appearance-none pr-9", form.hearAboutUs === "" && "text-[#8a8a8a]")}
+                  className={cn(fieldBaseClasses, "appearance-none pr-9", form.hearAboutUs === "" && "text-[#8F97A2]")}
                 >
                   <option value="" disabled hidden>
                     How did you hear about us?
                   </option>
                   {hearAboutUsOptions.map((option) => (
-                    <option key={option} value={option} className="text-[#333333]">
+                    <option key={option} value={option} className="text-[#2C2E33]">
                       {option}
                     </option>
                   ))}
@@ -278,10 +278,10 @@ export default function QuoteFormSection() {
                 required
                 checked={form.consent}
                 onChange={(e) => handleChange("consent", e.target.checked)}
-                className="mt-1 h-4 w-4 accent-[#50C970]"
+                className="mt-1 h-4 w-4 accent-[#FF6512]"
                 aria-label="Consent to receive text and email messages (Required)"
               />
-              <label className="font-work text-[13px] leading-[20px] text-[#6f6f6f]">
+              <label className="font-body text-[13px] leading-[20px] text-[#8F97A2]">
                 I agree to receive text and email messages from this company. I understand I
                 can opt out anytime per their{" "}
                 <a href="#" className="underline">
@@ -294,9 +294,9 @@ export default function QuoteFormSection() {
             <div className="mt-7 flex justify-center">
               <button
                 type="submit"
-                className="cursor-pointer bg-black px-8 py-[14px] font-work text-[15px] font-medium uppercase leading-[15px] text-white transition-opacity hover:opacity-85"
+                className="cursor-pointer bg-thermo-orange px-8 py-[14px] font-body text-[15px] font-medium uppercase leading-[15px] text-white transition-opacity hover:opacity-85"
               >
-                Request a Quote Now
+                Request My Free Quote
               </button>
             </div>
           </form>

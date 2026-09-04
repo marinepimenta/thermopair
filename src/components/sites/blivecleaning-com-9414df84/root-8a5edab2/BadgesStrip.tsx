@@ -1,29 +1,15 @@
-import Image from "next/image";
+// PLACEHOLDER: swap for Thermopair's real certification logos once confirmed.
 
-const ASSET_BASE =
-  "/sites/blivecleaning-com-9414df84/root-8a5edab2/images";
-
-type Badge = {
-  file: string;
-  alt: string;
-};
-
-const BADGES: Badge[] = [
-  { file: "7127657-Crystal_Award-Copy.png", alt: "Crystal Award" },
-  { file: "5-star-google-reviews-img.png", alt: "5 star Google reviews" },
-  { file: "OSHA.png", alt: "OSHA certified" },
-  {
-    file: "blive-cleaning-certified-professional-house-logo.png",
-    alt: "Certified professional house cleaner",
-  },
-  { file: "bbb-accredited-business.png", alt: "BBB accredited business" },
-  { file: "download.png", alt: "Industry certification" },
-  { file: "ncc-massachusetts-member.png", alt: "NCC Massachusetts member" },
-  { file: "ahc-professional-cleaning-logo.png", alt: "AHC professional cleaning" },
-  {
-    file: "certified-covid-19-infectious-logo.png",
-    alt: "Certified COVID-19 infectious control",
-  },
+const BADGES = [
+  "Credential 1",
+  "Credential 2",
+  "Credential 3",
+  "Credential 4",
+  "Credential 5",
+  "Credential 6",
+  "Credential 7",
+  "Credential 8",
+  "Credential 9",
 ];
 
 export default function BadgesStrip() {
@@ -32,14 +18,12 @@ export default function BadgesStrip() {
       <div className="mx-auto w-full max-w-[1320px] px-5">
         <div className="flex flex-row flex-wrap items-center justify-center gap-6 md:gap-10">
           {BADGES.map((badge) => (
-            <Image
-              key={badge.file}
-              src={`${ASSET_BASE}/${badge.file}`}
-              alt={badge.alt}
-              width={120}
-              height={74}
-              className="h-[52px] w-auto object-contain md:h-[74px]"
-            />
+            <div
+              key={badge}
+              className="flex h-[52px] w-[92px] items-center justify-center rounded-md border border-dashed border-thermo-slate/50 bg-thermo-paper px-3 text-center font-body text-[10px] leading-tight text-thermo-slate md:h-[74px] md:w-[120px] md:text-[11px]"
+            >
+              {badge}
+            </div>
           ))}
         </div>
       </div>

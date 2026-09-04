@@ -131,36 +131,110 @@
     @apply font-sans;
   }
 }
-/* ── Blive Cleaning (blivecleaning.com) design tokens ───────────────── */
+/* ── Thermopair — Climate Care | design tokens ──────────────────────── */
 @theme {
-  --font-sofia: var(--font-sofia-sans), sans-serif;
-  --font-sofia-sc: var(--font-sofia-sans-semi-condensed), sans-serif;
-  --font-work: var(--font-work-sans), sans-serif;
+  --font-heading: var(--font-heading), "Libre Baskerville", Georgia, serif;
+  --font-body: var(--font-body), Inter, system-ui, sans-serif;
 
-  --color-blive-green: #50c970;
-  --color-blive-lime: #bde872;
-  --color-blive-yellow: #ffbf40;
-  --color-blive-dark: #081e19;
-  --color-blive-cream: #f4f2ef;
-  --color-blive-cream-2: #f4f2ee;
-  --color-blive-ink: #333333;
+  /* Base */
+  --color-thermo-ink: #131313;
+  --color-thermo-graphite: #2c2e33;
+  --color-thermo-slate: #8f97a2;
+  --color-thermo-mist: #ebecee;
+  --color-thermo-paper: #f8f9fa;
+
+  /* Destaque principal — laranja */
+  --color-thermo-orange: #ff6512;
+  --color-thermo-orange-deep: #f04806;
+  --color-thermo-orange-soft: #ff8537;
+  --color-thermo-orange-pale: #ffb170;
+
+  /* Destaque secundário — roxo */
+  --color-thermo-purple: #694cfc;
+  --color-thermo-purple-deep: #5021e0;
+  --color-thermo-purple-soft: #9487fe;
+  --color-thermo-purple-pale: #b7b2ff;
 }
 
-.blive-page {
-  font-family: var(--font-work-sans), sans-serif;
-  color: #333333;
+.thermo-page {
+  font-family: var(--font-body), Inter, system-ui, sans-serif;
+  color: #2c2e33;
   background: #ffffff;
 }
-.blive-page h1,
-.blive-page h2,
-.blive-page h3,
-.blive-page h4,
-.blive-page h5,
-.blive-page h6 {
-  font-family: var(--font-sofia-sans), sans-serif;
+.thermo-page h1,
+.thermo-page h2,
+.thermo-page h3,
+.thermo-page h4,
+.thermo-page h5,
+.thermo-page h6 {
+  font-family: var(--font-heading), "Libre Baskerville", Georgia, serif;
 }
 
-@keyframes blive-fade-up {
+/* ── Gradientes da marca ────────────────────────────────────────────────
+   Reproduzidos em CSS a partir dos arquivos de referência da marca.
+   Para trocar pelos arquivos originais, substitua o background-image
+   destas classes por url(...) apontando para o asset correspondente. */
+
+/* Núcleo laranja envolto em halo roxo sobre fundo escuro. */
+.grad-aurora {
+  background-color: #0b0b10;
+  background-image:
+    radial-gradient(58% 74% at 50% 50%, #ff6512 0%, rgba(255, 101, 18, 0) 46%),
+    radial-gradient(78% 96% at 50% 50%, #694cfc 12%, rgba(105, 76, 252, 0.55) 46%, rgba(11, 11, 16, 0) 76%);
+}
+
+/* Inverso: campo laranja com núcleo roxo. */
+.grad-ember {
+  background-color: #131313;
+  background-image:
+    radial-gradient(34% 44% at 56% 46%, #694cfc 0%, rgba(105, 76, 252, 0) 62%),
+    radial-gradient(72% 88% at 50% 50%, #ff6512 10%, rgba(255, 101, 18, 0.7) 44%, rgba(19, 19, 19, 0) 78%);
+}
+
+/* Arco quente ascendente sobre fundo escuro. */
+.grad-glow-warm {
+  background-color: #131313;
+  background-image:
+    radial-gradient(76% 60% at 60% 112%, #ff6512 0%, #f04806 28%, rgba(240, 72, 6, 0.3) 56%, rgba(19, 19, 19, 0) 82%);
+}
+
+/* Arco frio ascendente sobre fundo escuro. */
+.grad-glow-cool {
+  background-color: #0b0b16;
+  background-image:
+    radial-gradient(84% 68% at 50% 104%, #b7b2ff 0%, #694cfc 32%, rgba(80, 33, 224, 0.4) 62%, rgba(11, 11, 22, 0) 86%);
+}
+
+/* Fundo claro com dobra de cor no canto — para seções sobre papel. */
+.grad-soft-light {
+  background-color: #f8f9fa;
+  background-image:
+    radial-gradient(64% 82% at 108% 78%, #694cfc 0%, rgba(105, 76, 252, 0.55) 26%, rgba(248, 249, 250, 0) 62%),
+    radial-gradient(46% 58% at 116% 12%, #ff6512 0%, rgba(255, 101, 18, 0.45) 30%, rgba(248, 249, 250, 0) 66%);
+}
+
+/* Faixa de assinatura laranja → roxo. */
+.grad-signature {
+  background-image: linear-gradient(90deg, #ff6512 0%, #694cfc 100%);
+}
+.text-grad-signature {
+  background-image: linear-gradient(90deg, #ff6512 0%, #694cfc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Textura de grão sutil, presente nos gradientes originais. */
+.grad-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes thermo-fade-up {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }

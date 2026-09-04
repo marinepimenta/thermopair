@@ -3,23 +3,23 @@ const ASSET_BASE =
 
 const CARDS = [
   {
-    title: ["Recurring", "Cleaning"],
-    href: "/residential-cleaning/",
+    title: ["Heating", "Installation"],
+    href: "/heating-installation/",
     image: "one_time_cleaning-1.jpg",
   },
   {
-    title: ["Deep", "Cleaning"],
-    href: "/deep-cleaning/",
+    title: ["Heating", "Repair"],
+    href: "/heating-repair/",
     image: "deep_cleaning-1.jpg",
   },
   {
-    title: ["Move In/Out", "Cleaning"],
-    href: "/move-in-move-out-cleaning/",
+    title: ["Air", "Conditioning"],
+    href: "/air-conditioning/",
     image: "move_in_out_cleaning-1.jpg",
   },
   {
-    title: ["Business", "cleaning"],
-    href: "/commercial-cleaning/",
+    title: ["Commercial", "HVAC"],
+    href: "/commercial-hvac/",
     image: "blive-cleaning-experts-img.jpg",
   },
 ];
@@ -39,7 +39,7 @@ export default function ServiceCards() {
               style={{ backgroundImage: `url(${ASSET_BASE}/${card.image})` }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
-            <h3 className="absolute bottom-[28px] left-6 right-6 max-w-[255px] font-sofia text-[28px] font-bold leading-[28px] text-white md:text-[30px] md:leading-[30px] lg:text-[36px] lg:leading-[36px]">
+            <h3 className="absolute bottom-[28px] left-6 right-6 max-w-[255px] font-heading text-[28px] font-bold leading-[28px] text-white md:text-[30px] md:leading-[30px] lg:text-[36px] lg:leading-[36px]">
               <span className="block">{card.title[0]}</span>
               <span className="block">{card.title[1]}</span>
             </h3>

@@ -5,44 +5,44 @@ import { cn } from "@/lib/utils";
 
 const FAQS = [
   {
-    q: "How many hours a day does it take to keep a house clean?",
-    a: "If you do some housework every day, routine tasks such as dusting, tidying, and doing dishes shouldn’t take more than 20-30 minutes. However, if your place is larger or needs a more detailed home cleaning, it may take longer.",
+    q: "How often should I service my heating system?",
+    a: "Most heating systems do best with a checkup once a year, ideally before the cold months start. Regular service catches small issues early, keeps your system running efficiently, and helps you avoid an unexpected breakdown on the coldest night.",
   },
   {
-    q: "How do I make an apartment cleaning schedule?",
-    a: "Take your time to list all the tasks by frequency – daily, weekly, and monthly. Then, assign specific tasks to each day of the week. Feel free to make any adjustments as you go. If you don’t have the time to do this, feel free to reach out to us and book a professional apartment cleaning in New Hampshire and Massachusetts. We’ll make sure your appointment is fully tailored to meet your needs.",
+    q: "How do I know when it's time to replace my furnace?",
+    a: "A few signs tell you it's time: your furnace is older than 15 years, repairs are getting more frequent and costly, your energy bills keep climbing, or some rooms never quite warm up. If you're noticing more than one of these, we'll come take an honest look and tell you plainly whether repair or replacement makes more sense for your home and budget.",
   },
   {
-    q: "What month do you start spring cleaning?",
-    a: "People usually choose March or April as the weather begins to warm. This period is ideal for spring cleaning since the mild weather allows you to open windows, air out the house, and take up tasks like window washing, decluttering, and reorganizing. The change of seasons also makes us feel more motivated to refresh our space and make it feel lighter and more welcoming.",
+    q: "When is the best time of year to install an AC system?",
+    a: "Spring and early fall are ideal, since demand is lower and we have more flexibility to schedule your installation before the weather turns. Waiting until the middle of summer often means longer waits during our busiest season. Installing ahead of time means your system is tested, running smoothly, and ready before you actually need it.",
   },
   {
-    q: "What is janitorial cleaning?",
-    a: "This service is designed to meet the cleaning needs of commercial and institutional spaces like offices, schools, hospitals, gyms, warehouses, government buildings, and so on. It includes a range of tasks such as sweeping, mopping, dusting, trash removal, and restroom sanitation. Reach out to our meticulous janitorial services in Massachusetts to maintain a clean, safe, and hygienic environment that will impress your clients, partners, and potential employees.",
+    q: "What is preventive HVAC maintenance?",
+    a: "Preventive maintenance means we check your heating and cooling system on a regular schedule instead of waiting for something to break. That includes cleaning components, checking refrigerant and airflow, testing electrical connections, and replacing filters. It costs less than emergency repairs, helps your system last longer, keeps energy bills predictable, and lowers the odds of it failing when you're depending on it most, like during a Massachusetts winter.",
   },
   {
-    q: "What is the difference between domestic cleaning and business cleaning?",
-    a: "Domestic upkeep is designed to meet the needs of private houses and apartments, while business cleaning specializes in workplaces such as offices, stores, or factories, providing services such as restroom sanitation, waste management, or floor waxing.",
+    q: "What is the difference between residential and commercial HVAC?",
+    a: "Residential systems are sized and designed to heat and cool a single home comfortably. Commercial systems serve larger, busier spaces like restaurants, shops, and offices, often need more zones, and have to keep running reliably through the business day.",
   },
   {
-    q: "What is the hardest thing to clean in a house?",
-    a: "Most people would agree that the oven is the most difficult to maintain because of the buildup of baked-on grease and food residue. However, tile grout, shower doors, and the toilet are also among the top choices. Rely on our cleaning company in Massachusetts and New Hampshire to help you tackle any challenges.",
+    q: "Why is my heating system making strange noises?",
+    a: "Banging, rattling, or squealing usually points to something specific: a loose part, worn belt, dirty burner, or airflow problem. It's rarely something to ignore, since small issues left alone tend to turn into bigger repairs. If your system starts sounding off, give us a call and we'll find out exactly what's going on.",
   },
   {
-    q: "How much do most cleaning companies charge?",
-    a: "The price mostly depends on the size of your home, the type of service you need, whether it’s a one-time or recurring plan, and other factors. Different cleaning companies across New Hampshire and Massachusetts also offer different packages and specialized services. Contact our friendly staff and quickly get your free quote based on your specific needs.",
+    q: "How much does a new heating or cooling system cost?",
+    a: "Cost depends on the size of your home or business, the type of system you choose, how much ductwork is involved, and the level of efficiency you want. Every property is a little different, so we don't like to guess over the phone. Reach out and we'll come take a look, walk you through your options, and give you a free, straightforward quote.",
   },
   {
-    q: "Who offers reliable home & janitorial cleaning near me in Massachusetts & New Hampshire?",
-    a: "Blive Cleaning is your trusted partner in keeping your residential and commercial spaces hygienic and well-organized. Our experienced, dedicated, and highly qualified professionals will carefully listen to your needs and provide you with a personalized service that ticks all the boxes. Get in touch with us today and experience the benefits working with a trusted and detail-oriented team!",
+    q: "Who offers reliable heating and cooling service near me in Massachusetts?",
+    a: "Thermopair provides residential and commercial heating and cooling service across Massachusetts. Our founder, Wanderson, started the company after dealing with a broken heating system and service that never called back, so we focus on answering promptly, explaining your options clearly, and treating your home or business with care. Reach out and we'll take it from there.",
   },
   {
-    q: "What cleaning products does Blive Cleaning uses for eco-friendly cleaning?",
-    a: "We often use eco-friendly products that are non-toxic and biodegradable. Common products include vinegar, free and clear, essential oils, and EPA’s safer choice options for green cleaning solutions. These products effectively clean while minimizing environmental impact and health risks.",
+    q: "Do you offer emergency service when a system fails?",
+    a: "Yes. A heating or cooling failure doesn't wait for business hours, so neither do we. Call us and we'll get back to you quickly, talk through what's happening, and get someone out to your home or business as fast as we can to get things running again.",
   },
   {
-    q: "Does Blive Cleaning offers eco-friendly/non-toxic cleaning services ?",
-    a: "Yes. At Blive Cleaning, we are committed to providing cleaning services that meet your specific needs and preferences, including ECO-FRIENDLY options.",
+    q: "Can you help me choose a more energy-efficient system?",
+    a: "Yes. We'll look at your home or business and recommend a system that fits your space, your usage, and your budget, so you spend less to stay comfortable.",
   },
 ];
 
@@ -63,7 +63,7 @@ function FaqItem({
   const triggerId = `faq-trigger-${index}`;
 
   return (
-    <div className="border-b border-[#e6e6e6]">
+    <div className="border-b border-[#EBECEE]">
       <button
         id={triggerId}
         type="button"
@@ -76,8 +76,8 @@ function FaqItem({
       >
         <span
           className={cn(
-            "font-work text-[15px] font-bold leading-[16px] text-[#333333] transition-colors hover:text-blive-green md:text-base",
-            isOpen && "text-blive-green"
+            "font-body text-[15px] font-bold leading-[16px] text-[#2C2E33] transition-colors hover:text-[#FF6512] md:text-base",
+            isOpen && "text-[#FF6512]"
           )}
         >
           {q}
@@ -94,7 +94,7 @@ function FaqItem({
         >
           <path
             d="M8 1V15M1 8H15"
-            stroke="#50C970"
+            stroke="#FF6512"
             strokeWidth="2"
             strokeLinecap="round"
           />
@@ -110,7 +110,7 @@ function FaqItem({
           aria-labelledby={triggerId}
           className="overflow-hidden"
         >
-          <p className="pb-5 font-work text-base font-normal leading-[25px] text-[#6f6f6f] md:pb-[25px] md:text-[18px] md:leading-[27px]">
+          <p className="pb-5 font-body text-base font-normal leading-[25px] text-[#8F97A2] md:pb-[25px] md:text-[18px] md:leading-[27px]">
             {a}
           </p>
         </div>
@@ -126,7 +126,7 @@ export default function FaqSection() {
     <section className="bg-white py-12 lg:py-[60px] lg:pb-[100px]">
       <div className="mx-auto flex w-full max-w-[1340px] flex-col px-5 lg:flex-row lg:items-start lg:gap-[60px]">
         <div className="mb-8 lg:mb-0 lg:w-[376px] lg:shrink-0">
-          <h2 className="max-w-[376px] font-sofia text-[34px] font-semibold leading-[36px] text-black md:text-[44px] md:leading-[46px] lg:text-[56px] lg:leading-[56px]">
+          <h2 className="max-w-[376px] font-heading text-[34px] font-semibold leading-[36px] text-black md:text-[44px] md:leading-[46px] lg:text-[56px] lg:leading-[56px]">
             Frequently Asked Questions
           </h2>
         </div>

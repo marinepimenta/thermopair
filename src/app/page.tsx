@@ -15,7 +15,7 @@ import TestimonialsSection from "@/components/sites/blivecleaning-com-9414df84/r
 
 export default function Home() {
   return (
-    <div className="blive-page flex min-h-full flex-col overflow-x-clip">
+    <div className="thermo-page flex min-h-full flex-col overflow-x-clip">
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />
