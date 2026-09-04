@@ -27,7 +27,7 @@ export default function CtaGridSection() {
         <div className="group relative min-h-[300px] overflow-hidden rounded-lg lg:col-span-2 lg:row-span-1 lg:min-h-[340px]">
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-            style={{ backgroundImage: `url(${ASSET_BASE}/hvac/relaxing-under-ac.avif)` }}
+            style={{ backgroundImage: `url(${ASSET_BASE}/hvac/relaxing-under-ac.jpg)` }}
           />
           <div className="absolute inset-0 bg-black/35" />
           <h2 className="absolute bottom-6 left-6 right-6 max-w-[551px] font-heading text-[32px] font-bold leading-[34px] text-white md:bottom-10 md:left-10 md:right-10 md:text-[40px] md:leading-[42px] lg:text-[56px] lg:leading-[56px]">
