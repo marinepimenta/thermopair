@@ -5,6 +5,7 @@ import CtaGridSection from "@/components/sites/blivecleaning-com-9414df84/root-8
 import FaqSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/FaqSection";
 import FeaturesHandSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/FeaturesHandSection";
 import HeroSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/HeroSection";
+import QuickServiceSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/QuickServiceSection";
 import QuoteFormSection from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/QuoteFormSection";
 import Reveal from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/Reveal";
 import SectionMorph from "@/components/sites/blivecleaning-com-9414df84/root-8a5edab2/SectionMorph";
@@ -18,21 +19,25 @@ import TestimonialsSection from "@/components/sites/blivecleaning-com-9414df84/r
 /**
  * Narrativa visual da home, em bandas alternadas:
  *
- *   dark  → hero · depoimentos
- *   light → formulário · selos
- *   dark  → sobre · diferenciais
+ *   dark  → hero + formulário rápido/autoridade
+ *   dark  → serviços · cards · depoimentos
  *   light → áreas
- *   dark  → serviços · cards · números
- *   light → CTA · FAQ
+ *   dark  → sobre · diferenciais · números
+ *   light → CTA · FAQ · selos
+ *   light → formulário completo (id="schedule-service")
  *   dark  → rodapé
  *
- * Os depoimentos vêm logo após a hero, ainda na banda escura: a prova social
- * aparece antes de qualquer pedido de contato, e o par hero+reviews lê como
- * uma única abertura escura.
+ * Estrutura de conversão em duas camadas: o QuickServiceSection (nome,
+ * telefone, CEP) captura o lead rápido logo abaixo da hero; todo CTA
+ * "Schedule Service" do site rola até o formulário completo no fim da
+ * página, que preserva os campos e a lógica originais.
  *
- * Cada troca de banda passa por um <SectionMorph>, que sobe por cima da seção
- * anterior com raio elíptico e achata durante o scroll — a mudança acontece
- * como transformação, não como corte.
+ * O card do QuickServiceSection sobe por cima do rodapé da hero via margem
+ * negativa — mesma cor de fundo dos dois lados, sem costura visível; o
+ * contraste fica só por conta do card branco. Fora esse ponto, cada troca
+ * de banda passa por um <SectionMorph>, que sobe por cima da anterior com
+ * raio elíptico e achata durante o scroll — a mudança acontece como
+ * transformação, não como corte.
  */
 export default function Home() {
   return (
@@ -42,22 +47,14 @@ export default function Home() {
 
       <main className="flex-1">
         <HeroSection />
+        <QuickServiceSection />
 
-        {/* Continua na banda escura da hero — sem morph entre as duas. */}
+        {/* Mesma cor de fundo do QuickServiceSection — nenhum morph
+            necessário aqui. */}
         <div className="band-dark">
+          <ServicesIntroSection />
+          <ServiceCards />
           <TestimonialsSection />
-        </div>
-
-        <SectionMorph to="light" />
-        <div className="band-light">
-          <QuoteFormSection />
-          <BadgesStrip />
-        </div>
-
-        <SectionMorph to="dark" />
-        <div className="band-dark">
-          <AboutGreenSection />
-          <FeaturesHandSection />
         </div>
 
         <SectionMorph to="light" />
@@ -67,8 +64,8 @@ export default function Home() {
 
         <SectionMorph to="dark" />
         <div className="band-dark">
-          <ServicesIntroSection />
-          <ServiceCards />
+          <AboutGreenSection />
+          <FeaturesHandSection />
           <StatsSection />
         </div>
 
@@ -76,6 +73,13 @@ export default function Home() {
         <div className="band-light">
           <CtaGridSection />
           <FaqSection />
+          <BadgesStrip />
+        </div>
+
+        {/* Formulário completo — destino de todo CTA "Schedule Service" do
+            site. Última seção principal antes do rodapé, como pedido. */}
+        <div className="band-light">
+          <QuoteFormSection />
         </div>
       </main>
 

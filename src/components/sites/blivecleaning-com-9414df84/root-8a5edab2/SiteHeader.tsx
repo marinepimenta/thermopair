@@ -199,7 +199,7 @@ export default function SiteHeader() {
       {/* CTA buttons */}
       <div className="flex shrink-0 flex-row items-center gap-2 md:gap-[10px]">
         <Link
-          href="#request-a-quote"
+          href="#schedule-service"
           className="hidden rounded-full bg-thermo-orange px-6 py-3 text-center font-body text-[13px] font-semibold uppercase tracking-[0.05em] leading-[15px] text-white transition-colors duration-300 hover:bg-thermo-orange-deep lg:inline-block"
         >
           Schedule Service
@@ -261,7 +261,7 @@ export default function SiteHeader() {
             ))}
             <li>
               <Link
-                href="#request-a-quote"
+                href="#schedule-service"
                 className="block bg-thermo-orange px-6 py-4 text-center font-body text-[13px] font-semibold uppercase text-white"
                 onClick={() => setMobileOpen(false)}
               >

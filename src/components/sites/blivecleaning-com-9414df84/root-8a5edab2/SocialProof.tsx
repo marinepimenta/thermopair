@@ -5,12 +5,15 @@ import { cn } from "@/lib/utils";
  *
  * NOTA SOBRE DADOS: não há nota agregada nem contagem de avaliações
  * verificadas no projeto, então nada disso é exibido — apenas o selo
- * "Google Reviews". Se a Thermopair confirmar a média e o total do perfil
- * do Google, dá para passá-los via props em <GoogleReviewsBadge />.
+ * "5-Star Rated" / "Google Reviews". Se a Thermopair confirmar a média e o
+ * total do perfil do Google, dá para passá-los via props em
+ * <GoogleReviewsBadge />.
  *
  * As estrelas são decorativas (aria-hidden): o nome acessível vem do texto
  * ao lado, para não afirmar uma nota que não foi verificada.
  */
+
+export const GOOGLE_REVIEWS_URL = "https://share.google/N2kOZ0X9MujMSPQ1d";
 
 export function Stars({
   size = 16,
@@ -68,28 +71,36 @@ export function GoogleGlyph({ size = 16 }: { size?: number }) {
 }
 
 /**
- * Selo compacto para a hero: estrelas + marca do Google.
- * `rating` e `reviewCount` só devem ser passados quando vierem do perfil real.
+ * Selo de estrelas — compacto na hero, clicável para o perfil do Google.
+ * `rating`/`reviewCount` só devem ser passados quando vierem do perfil real;
+ * sem eles, mostra apenas `label` (padrão "Google Reviews").
  */
 export function GoogleReviewsBadge({
   rating,
   reviewCount,
+  label = "Google Reviews",
+  href = GOOGLE_REVIEWS_URL,
   className,
 }: {
   rating?: string;
   reviewCount?: number;
+  label?: string;
+  href?: string;
   className?: string;
 }) {
   return (
-    <div
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
-        "inline-flex items-center gap-3 rounded-full border border-thermo-mist/15 bg-white/[0.04] px-4 py-2.5",
+        "group inline-flex items-center gap-3 rounded-full border border-thermo-mist/15 bg-white/[0.04] px-4 py-2.5 transition-colors duration-300 hover:border-thermo-orange/40 hover:bg-white/[0.08]",
         className,
       )}
     >
       <Stars size={15} className="text-thermo-orange" />
       <span aria-hidden="true" className="h-4 w-px bg-thermo-mist/20" />
-      <span className="inline-flex items-center gap-2 font-body text-[13px] font-medium text-thermo-mist/85">
+      <span className="inline-flex items-center gap-2 font-body text-[13px] font-medium text-thermo-mist/85 transition-colors duration-300 group-hover:text-white">
         <GoogleGlyph size={15} />
         {rating ? (
           <>
@@ -100,9 +111,9 @@ export function GoogleReviewsBadge({
             </span>
           </>
         ) : (
-          "Google Reviews"
+          label
         )}
       </span>
-    </div>
+    </a>
   );
 }

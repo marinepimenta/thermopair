@@ -5,12 +5,6 @@ import { GoogleReviewsBadge } from "./SocialProof";
 
 const ASSET_BASE = "/sites/blivecleaning-com-9414df84/root-8a5edab2/images";
 
-const CHIPS = [
-  "Serving Massachusetts",
-  "Residential & Commercial",
-  "Fast emergency response",
-];
-
 export default function HeroSection() {
   return (
     /* min-height em svh evita o salto da barra de endereço no Safari iOS.
@@ -54,7 +48,7 @@ export default function HeroSection() {
             style={{ "--i": 3 } as React.CSSProperties}
           >
             <Link
-              href="#request-a-quote"
+              href="#schedule-service"
               className="inline-flex items-center justify-center rounded-full bg-thermo-orange px-7 py-4 font-body text-[14px] font-semibold uppercase tracking-[0.06em] text-white transition-transform duration-300 hover:-translate-y-0.5 hover:bg-thermo-orange-deep"
             >
               Schedule Service
@@ -68,32 +62,18 @@ export default function HeroSection() {
             </Link>
           </div>
 
-          {/* Prova social logo abaixo dos CTAs: primeira coisa que valida a
-              empresa, sem competir com o botão principal. */}
+          {/* Selo de 5 estrelas logo abaixo dos CTAs — primeira coisa que
+              valida a empresa, sem competir com o botão principal. A barra
+              de autoridade (15+ anos, preço fechado, local, técnicos
+              certificados) fica na seção seguinte, então os antigos chips
+              de "Serving Massachusetts / Residential & Commercial / Fast
+              emergency response" saíram daqui para não duplicar mensagem. */}
           <div
             className="reveal mt-8"
             style={{ "--i": 4 } as React.CSSProperties}
           >
-            <GoogleReviewsBadge />
+            <GoogleReviewsBadge label="5-Star Rated" />
           </div>
-
-          <ul
-            className="reveal mt-8 flex flex-wrap gap-2.5"
-            style={{ "--i": 5 } as React.CSSProperties}
-          >
-            {CHIPS.map((chip) => (
-              <li
-                key={chip}
-                className="hero-chip inline-flex items-center gap-2 rounded-full px-4 py-2 font-body text-[13px] text-thermo-mist/80"
-              >
-                <span
-                  aria-hidden="true"
-                  className="h-1.5 w-1.5 rounded-full bg-thermo-orange"
-                />
-                {chip}
-              </li>
-            ))}
-          </ul>
         </div>
 
         {/* Arco: a foto sai do retângulo e vira uma janela editorial. */}

@@ -1,4 +1,4 @@
-import { GoogleGlyph, Stars } from "./SocialProof";
+import { GOOGLE_REVIEWS_URL, GoogleGlyph, Stars } from "./SocialProof";
 
 type Review = {
   author: string;
@@ -58,10 +58,17 @@ function ReviewCard({ review, featured }: { review: Review; featured?: boolean }
     >
       <div className="flex items-center justify-between gap-4">
         <Stars size={16} className="text-thermo-orange" />
-        <span className="inline-flex items-center gap-1.5 font-body text-[12px] text-thermo-mist/50">
+        {/* Só o selo é clicável, não o card inteiro — mantém a leitura da
+            avaliação limpa e ainda deixa fácil verificar no Google. */}
+        <a
+          href={GOOGLE_REVIEWS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 font-body text-[12px] text-thermo-mist/50 transition-colors duration-300 hover:text-white"
+        >
           <GoogleGlyph size={14} />
           Google Review
-        </span>
+        </a>
       </div>
 
       <blockquote
@@ -114,12 +121,25 @@ export default function TestimonialsSection() {
             </h2>
           </div>
 
-          <p
-            className="reveal mt-6 max-w-[42ch] font-body text-[17px] leading-[1.65] text-thermo-mist/70 lg:mt-0 lg:shrink-0 lg:text-right"
+          <div
+            className="reveal mt-6 lg:mt-0 lg:shrink-0 lg:text-right"
             style={{ "--i": 2 } as React.CSSProperties}
           >
-            What people say after we have been to their home or business.
-          </p>
+            <p className="max-w-[42ch] font-body text-[17px] leading-[1.65] text-thermo-mist/70 lg:ml-auto">
+              What people say after we have been to their home or business.
+            </p>
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-3 inline-flex items-center gap-1.5 font-body text-[14px] font-semibold text-thermo-orange transition-colors duration-300 hover:text-thermo-orange-deep"
+            >
+              Read our Google Reviews
+              <span aria-hidden="true" className="inline-block transition-transform duration-300 group-hover:translate-x-0.5">
+                →
+              </span>
+            </a>
+          </div>
         </div>
 
         {/* Mobile: trilho horizontal com scroll-snap. Desktop: grade 3 colunas,

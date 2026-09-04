@@ -109,8 +109,8 @@ export default function QuoteFormSection() {
 
   return (
     <section
-      id="request-a-quote"
-      className="w-full py-24 md:py-32 lg:py-40"
+      id="schedule-service"
+      className="w-full scroll-mt-24 py-24 md:scroll-mt-28 md:py-32 lg:py-40"
     >
       <div className="mx-auto w-full max-w-[1320px] px-5 md:px-8">
         <h2
@@ -269,9 +269,8 @@ export default function QuoteFormSection() {
                 <div className="md:col-span-6">
                   <input
                     type="text"
-                    required
-                    placeholder="Discount code"
-                    aria-label="Discount code (Required)"
+                    placeholder="Discount code (optional)"
+                    aria-label="Discount code"
                     value={form.discountCode}
                     onChange={(e) => handleChange("discountCode", e.target.value)}
                     className={fieldBaseClasses}

@@ -19,7 +19,7 @@ export default function CtaGridSection() {
             </span>
           </h2>
           <a
-            href="#request-a-quote"
+            href="#schedule-service"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-thermo-orange px-7 py-4 font-body text-[14px] font-semibold uppercase tracking-[0.06em] text-white transition-transform duration-300 hover:-translate-y-0.5 hover:bg-thermo-orange-deep w-fit"
           >
             Schedule Service
