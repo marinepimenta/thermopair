@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   description:
     "Heating and cooling installation and maintenance across Massachusetts. Human service, fast emergency response, and clear pricing before we start.",
   icons: {
-    icon: "/sites/blivecleaning-com-9414df84/root-8a5edab2/images/logo-thermopair-horizontal-gradient.svg",
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/sites/blivecleaning-com-9414df84/root-8a5edab2/images/logo-thermopair-horizontal-gradient.svg`,
   },
 };
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { GoogleReviewsBadge } from "./SocialProof";
 
-const ASSET_BASE = "/sites/blivecleaning-com-9414df84/root-8a5edab2/images";
+const ASSET_BASE = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/sites/blivecleaning-com-9414df84/root-8a5edab2/images`;
 
 export default function HeroSection() {
   return (
