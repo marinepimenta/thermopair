@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ASSET_BASE =
-  "/sites/blivecleaning-com-9414df84/root-8a5edab2/images";
+  `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/sites/blivecleaning-com-9414df84/root-8a5edab2/images`;
 
 const SERVICES = [
   "Heating Installation",
